@@ -1,19 +1,11 @@
 export const WorkData = [
   {
-    company: "Google",
-    designation: "Software Engineer",
-    joinDate: "01-01-2022",
+    company: "RxLogix Corporation",
+    location: "Noida",
+    designation: "Associate Software Engineer I",
+    joinDate: "23-06-2021",
     endDate: "Present",
-    work: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    companyLogo: "https://blog.hubspot.com/hubfs/image8-2.jpg",
-  },
-  {
-    company: "Facebook",
-    designation: "Software Engineer",
-    joinDate: "01-01-2022",
-    endDate: "Present",
-    work: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    companyLogo:
-      "https://image.shutterstock.com/image-photo/valencia-spain-march-05-2017-260nw-593204357.jpg",
-  },
+    work: "Working as Java Developer in the team, which handles the installation operations for other products both within the company as well as for clients creating new functionalities and fixing bugs.",
+    companyLogo: "https://avatars.githubusercontent.com/u/5504046?s=200&v=4",
+  }
 ];
