@@ -1,0 +1,39 @@
+.about{
+    padding-bottom: 48px;
+}
+
+.about-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-info{
+    font-size: 24px;
+}
+
+.about-name{
+    font-size: 32px;
+    color: blue;
+}
+
+.abt-pic{
+    height: 420px;
+}
+
+@media only screen and (max-width:720px){
+    .about-top{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-info{
+        font-size: 20px;
+    }
+    .about-name{
+        font-size: 28px;
+    }
+    .abt-pic{
+        height: 220px;
+    }
+}
