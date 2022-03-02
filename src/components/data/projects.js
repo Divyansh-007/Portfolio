@@ -1,4 +1,4 @@
-import cryto from "../../assets/project-images/cryto.JPG"
+import crypto from "../../assets/project-images/crypto.JPG"
 import tasky from "../../assets/project-images/tasky.JPG";
 import covidAPI from "../../assets/project-images/covid-api.JPG";
 import mapper from "../../assets/project-images/mapper.JPG";
@@ -11,10 +11,10 @@ export const ProjectData = [
     {
         id: 1,
         title: "Crypto@One",
-        about: "A one stop application for all crypto currencies enthusiasts where one can get lastest updates about the same across the globe as well as find individual details for any crypto-currencies available from the list in detail.",
+        about: "One-stop destination for all crypto-currency enthusiasts. Here one can get updates about the market from across the globe and can look for individual stats about any of the crypto-currencies available.",
         tags: ["Crypto","ReactJs","Redux","Rapid-API"],
         demo: "https://cryptoatone.netlify.app/",
-        image: cryto
+        image: crypto
     },
     {
         id: 2,
