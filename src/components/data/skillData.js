@@ -11,10 +11,6 @@ export const SkillData = [
         icon: <i class="devicon-redux-original colored"></i>,
       },
       {
-        name: "JavaScript",
-        icon: <i class="devicon-javascript-plain colored"></i>,
-      },
-      {
         name: "CSS",
         icon: <i class="devicon-css3-plain colored"></i>,
       },
@@ -32,9 +28,35 @@ export const SkillData = [
         icon: <i class="devicon-nodejs-plain colored"></i>,
       },
       {
-        name: "Java",
-        icon: <i class="devicon-java-plain colored"></i>,
+        name: "ExpressJs",
+        icon: <i class="devicon-express-original colored"></i>,
       },
     ],
   },
+  {
+    type: "Database",
+    list: [
+      {
+        name: "MongoDB",
+        icon: <i class="devicon-mongodb-plain-wordmark colored"></i>,
+      },
+    ],
+  },
+  {
+    type: "Languages",
+    list: [
+      {
+        name: "TypeScript",
+        icon: <i class="devicon-typescript-plain colored"></i>,
+      },
+      {
+        name: "JavaScript",
+        icon: <i class="devicon-javascript-plain colored"></i>,
+      },
+      {
+        name: "Java",
+        icon: <i class="devicon-java-plain colored"></i>,
+      },
+    ]
+  }
 ];

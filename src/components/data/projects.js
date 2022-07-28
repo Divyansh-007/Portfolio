@@ -4,9 +4,6 @@ import getFit from "../../assets/project-images/getFit.JPG";
 import tasky from "../../assets/project-images/tasky.JPG";
 import covidAPI from "../../assets/project-images/covid-api.JPG";
 import mapper from "../../assets/project-images/mapper.JPG";
-import pingPong from "../../assets/project-images/ping-pong.JPG";
-import starWalk from "../../assets/project-images/starwalk.JPG";
-import dogFinder from "../../assets/project-images/dog-finder.JPG";
 
 export const ProjectData = [
   {
@@ -87,25 +84,5 @@ export const ProjectData = [
     demo: "https://divyansh-007.github.io/Mapper/",
     github: "https://github.com/Divyansh-007/Mapper",
     image: mapper,
-  },
-  {
-    id: 7,
-    title: "Ping Pong",
-    about:
-      "Online recreation of classic game ping pong. User can play with the controls and the it keeps the track of maximum score.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    demo: "https://divyansh-007.github.io/Ping-Pong/",
-    github: "https://github.com/Divyansh-007/Ping-Pong",
-    image: pingPong,
-  },
-  {
-    id: 8,
-    title: "Star Walk",
-    about:
-      "A simple project to view Astronomical Picture Of the Day by NASA. User can everyday visit and view the APOD released by NASA.",
-    tags: ["HTML", "CSS", "JavaScript", "NASA-APOD API"],
-    demo: "https://divyansh-007.github.io/Star-Walk/",
-    github: "https://github.com/Divyansh-007/Star-Walk",
-    image: starWalk,
   },
 ];
