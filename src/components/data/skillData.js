@@ -37,8 +37,12 @@ export const SkillData = [
     type: "Database",
     list: [
       {
+        name: "MySQL",
+        icon: <i class="devicon-mysql-plain colored"></i>,
+      },
+      {
         name: "MongoDB",
-        icon: <i class="devicon-mongodb-plain-wordmark colored"></i>,
+        icon: <i class="devicon-mongodb-plain colored"></i>,
       },
     ],
   },
@@ -57,6 +61,6 @@ export const SkillData = [
         name: "Java",
         icon: <i class="devicon-java-plain colored"></i>,
       },
-    ]
-  }
+    ],
+  },
 ];
