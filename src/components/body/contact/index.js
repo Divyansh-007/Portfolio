@@ -15,7 +15,7 @@ const Contact = () => {
                     <SocialContact />
                 </div>
                 <div className='download'>
-                    <a download href={resume}>
+                    <a href="https://drive.google.com/drive/folders/141ClIvfepSzNhSMTGU6mhawfa3piVhi5?usp=sharing" target='blank'>
                     <i class="fas fa-file-download download-icon"></i>Download Resume
                     </a>
                 </div>
