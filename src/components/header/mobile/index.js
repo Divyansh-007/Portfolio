@@ -14,8 +14,8 @@ const Mobile = ({ isOpen, setIsOpen }) => {
       </div>
       <div className="mobile-options">
         <div className="mob-option">
-          <a href="#projects">
-            <i class="fas fa-pencil-ruler option-icon"></i>Projects
+          <a href="#work">
+            <i class="fas fa-briefcase option-icon"></i>Work
           </a>
         </div>
         <div className="mob-option">
@@ -24,8 +24,13 @@ const Mobile = ({ isOpen, setIsOpen }) => {
           </a>
         </div>
         <div className="mob-option">
-          <a href="#work">
-            <i class="fas fa-briefcase option-icon"></i>Work
+          <a href="#certificates">
+            <i class="fas fa-check-double option-icon"></i>Certificates
+          </a>
+        </div>
+        <div className="mob-option">
+          <a href="#projects">
+            <i class="fas fa-pencil-ruler option-icon"></i>Projects
           </a>
         </div>
         <div className="mob-option">

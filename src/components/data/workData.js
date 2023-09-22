@@ -3,7 +3,7 @@ import rxlogix from "../../assets/company-icons/rxlogix.png";
 
 export const WorkData = [
   {
-    company: "Getout Systems",
+    company: "Getout System",
     location: "Gurugram",
     designation: "Software Development Engineer II",
     joinDate: "25-07-2022",

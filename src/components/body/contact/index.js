@@ -2,7 +2,6 @@ import React from 'react';
 import "./contact.css";
 import Separator from "../../common/separator/index";
 import SocialContact from "../../common/social-contact/index";
-import resume from "../../../assets/Divyansh_Jaiswal.pdf";
 
 const Contact = () => {
     return (
