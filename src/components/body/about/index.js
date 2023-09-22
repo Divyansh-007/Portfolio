@@ -10,7 +10,7 @@ const About = () => {
         <div className="about-info">
           Hello there 👋, I am
           <br /> <span className="about-name">Random Guy</span>,
-          <br />I love working with web.
+          <br />who love building solutions & working with tech.
         </div>
         <div className="about-photo">
           <img src={image} alt="coder" className="abt-pic" />
