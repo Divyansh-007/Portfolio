@@ -16,14 +16,6 @@ export const SkillData = [
     type: "Frontend",
     list: [
       {
-        name: "ReactJs",
-        icon: <i class="devicon-react-original colored"></i>,
-      },
-      {
-        name: "Redux",
-        icon: <i class="devicon-redux-original colored"></i>,
-      },
-      {
         name: "CSS",
         icon: <i class="devicon-css3-plain colored"></i>,
       },
