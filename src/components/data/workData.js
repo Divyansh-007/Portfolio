@@ -7,9 +7,9 @@ export const WorkData = [
     location: "Gurugram",
     designation: "Software Development Engineer II",
     joinDate: "25-07-2022",
-    endDate: "Present",
-    work: "Working as a Backend Developer on the engineering team primarily focused on creating and maintaining better microservices to improve performance and completing the requirement along with support to the frontend team for the same.",
-    companyLogo: getout
+    endDate: "04-10-2023",
+    work: "Had worked as a Backend Developer on the engineering team primarily focused on creating and maintaining better microservices to improve performance and completing the requirement along with support to the frontend team for the same.",
+    companyLogo: getout,
   },
   {
     company: "RxLogix Corporation India Pvt Ltd",

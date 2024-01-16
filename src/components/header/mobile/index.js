@@ -28,11 +28,11 @@ const Mobile = ({ isOpen, setIsOpen }) => {
             <i class="fas fa-check-double option-icon"></i>Certificates
           </a>
         </div>
-        <div className="mob-option">
+        {/* <div className="mob-option">
           <a href="#projects">
             <i class="fas fa-pencil-ruler option-icon"></i>Projects
           </a>
-        </div>
+        </div> */}
         <div className="mob-option">
           <a href="#contact">
             <i class="fas fa-envelope option-icon"></i>Contact

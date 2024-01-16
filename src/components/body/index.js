@@ -22,9 +22,9 @@ const Body = () => {
       <section id="certificates">
         <Licenses />
       </section>
-      <section id="projects">
+      {/* <section id="projects">
         <Projects />
-      </section>
+      </section> */}
       <section id="contact">
         <Contact />
       </section>
