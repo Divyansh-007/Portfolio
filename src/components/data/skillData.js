@@ -3,10 +3,6 @@ export const SkillData = [
     type: "Languages",
     list: [
       {
-        name: "Go",
-        icon: <i class="devicon-go-original-wordmark colored"></i>,
-      },
-      {
         name: "TypeScript",
         icon: <i class="devicon-typescript-plain colored"></i>,
       },
@@ -24,12 +20,16 @@ export const SkillData = [
     type: "Backend",
     list: [
       {
-        name: "NodeJs",
-        icon: <i class="devicon-nodejs-plain colored"></i>,
+        name: "NestJs",
+        icon: <i className="devicon-nestjs-plain colored"></i>,
       },
       {
         name: "ExpressJs",
         icon: <i class="devicon-express-original colored"></i>,
+      },
+      {
+        name: "NodeJs",
+        icon: <i class="devicon-nodejs-plain colored"></i>,
       },
     ],
   },
@@ -37,12 +37,12 @@ export const SkillData = [
     type: "Database",
     list: [
       {
-        name: "MySQL",
-        icon: <i class="devicon-mysql-plain colored"></i>,
-      },
-      {
         name: "MongoDB",
         icon: <i class="devicon-mongodb-plain colored"></i>,
+      },
+      {
+        name: "MySQL",
+        icon: <i class="devicon-mysql-plain colored"></i>,
       },
     ],
   },

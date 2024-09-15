@@ -6,12 +6,19 @@ const WorkCard = ({ work }) => {
     <div className="work-card">
       <img src={work.companyLogo} alt={work.company} className="work-logo" />
       <div className="work-info">
-        <label className="company-name"><b>{work.designation}</b>, {work.company}</label>
+        <label className="company-name">
+          <b>{work.designation}</b>, {work.company}
+        </label>
         <div className="work-dates">
-          {work.joinDate} - {work.endDate} | {work.location}
+          {work.joinDate} - {work.endDate ? work.endDate : "Present"} |{" "}
+          {work.location}
         </div>
         <div className="work-desc">
-          <p>{work.work}</p>
+          <ul>
+            {work.description.map((point, index) => (
+              <li key={index} dangerouslySetInnerHTML={{ __html: point }} />
+            ))}
+          </ul>
         </div>
       </div>
     </div>

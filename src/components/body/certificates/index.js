@@ -9,7 +9,7 @@ const Licenses = () => {
   return (
     <div className="certificates">
       <Separator />
-      <label className="section-title">Certificates & Licenses</label>
+      <label className="section-title">Licenses & Certificates </label>
       <div>
         {data.map((license) => {
           return <LicenseCard license={license} key={license.id} />;

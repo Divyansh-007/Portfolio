@@ -1,11 +1,58 @@
-import cyber from "../../assets/license-images/cyber.png";
+import iima from "../../assets/license-images/iima.png";
+import aws from "../../assets/license-images/aws.png";
+import google from "../../assets/license-images/google.png";
 import udemy from "../../assets/license-images/udemy.png";
 import codingninjas from "../../assets/license-images/codingNinjas.png";
 
 export const LicenseData = [
   {
     id: 1,
-    title: "Cybersecurity - Google",
+    title: "Leadership Skills",
+    provider: "Indian Institute of Management Ahemdabad",
+    about:
+      "Leadership Skills from IIMA on Coursera. Certificate earned at September 01, 2024",
+    tags: [
+      "Mindfullness & Inner Stability",
+      "Emotional Intelligence",
+      "Learning Mindset",
+      "Leadership Style & Culture",
+      "Leadership & Ancient Wisdom : Mahabharata",
+    ],
+    credentialUrl:
+      "https://coursera.org/share/4bedcfdb992192467c239333cf3cef5a",
+    image: iima,
+  },
+  {
+    id: 2,
+    title: "Agile Project Management",
+    provider: "Google",
+    about:
+      "Agile Project Management by Google on Coursera. Certificate earned at August 14, 2024",
+    tags: ["Agile Model", "Waterfall Model", "Scrum", "Kanban Board"],
+    image: google,
+  },
+  {
+    id: 3,
+    title: "AWS Cloud Solutions Architect",
+    provider: "AWS",
+    about:
+      "AWS Cloud Solutions Architect Specialization by AWS on Coursera. Certificate earned at May 12, 2024",
+    tags: [
+      "Amazon Web Services",
+      "Cloud Computing",
+      "Data Management",
+      "Big Data",
+      "Machine Learning",
+      "Data Analytics & Visualization",
+    ],
+    credentialUrl:
+      "https://coursera.org/share/05b88512024ec0917ae397d34dba888e",
+    image: aws,
+  },
+  {
+    id: 4,
+    title: "Google Cybersecurity",
+    provider: "Google",
     about:
       "Google Cybersecurity by Google on Coursera. Certificate earned at September 22, 2023",
     tags: [
@@ -17,11 +64,12 @@ export const LicenseData = [
     ],
     credentialUrl:
       "https://coursera.org/share/ba877fb6509c41e0fdc2fc0a9cd56f0b",
-    image: cyber,
+    image: google,
   },
   {
-    id: 2,
-    title: "MySQL - The Ultimate Bootcamp",
+    id: 5,
+    title: "MySQL",
+    provider: "Udemy",
     about:
       "The Ulitmate MySQL Bootcamp on Udemy. Certificate earned at January 27, 2023",
     tags: ["SQL", "MySQL Workbench"],
@@ -30,8 +78,9 @@ export const LicenseData = [
     image: udemy,
   },
   {
-    id: 3,
-    title: "Docker & Kubernetes - The Complete Guide",
+    id: 6,
+    title: "Docker & Kubernetes",
+    provider: "Udemy",
     about:
       "Docker & Kubernetes on Udemy. Certificate earned at January 13, 2023",
     tags: ["Docker", "Containers"],
@@ -40,8 +89,9 @@ export const LicenseData = [
     image: udemy,
   },
   {
-    id: 4,
-    title: "Linux Mastery - Master the Command Line",
+    id: 7,
+    title: "Linux Mastery",
+    provider: "Udemy",
     about: "Linux Mastery on Udemy. Certificate earned at December 03, 2022",
     tags: ["Linux", "CLI"],
     credentialUrl:
@@ -49,8 +99,9 @@ export const LicenseData = [
     image: udemy,
   },
   {
-    id: 5,
-    title: "Git & Github - The Complete Guide",
+    id: 8,
+    title: "Git & Github",
+    provider: "Udemy",
     about:
       "The Complete Git Guide on Udemy. Certificate earned at December 03, 2022",
     tags: ["Git", "Github"],
@@ -59,8 +110,9 @@ export const LicenseData = [
     image: udemy,
   },
   {
-    id: 6,
-    title: "MERN Stack - Web Development",
+    id: 9,
+    title: "MERN Stack Web Development",
+    provider: "Coding Ninjas",
     about:
       "Career Camp | Web Developement Module by Coding Ninjas. From January 2021 to April 2021",
     tags: ["NodeJs", "MongoDB", "ReactJs", "Express"],
@@ -69,8 +121,9 @@ export const LicenseData = [
     image: codingninjas,
   },
   {
-    id: 7,
+    id: 10,
     title: "Data Structures & Algorithms with Java",
+    provider: "Coding Ninjas",
     about:
       "Career Camp | Web Developer Track by Coding Ninjas. From September 2020 to January 2021",
     tags: ["Java", "Data Structures", "Algorithms"],

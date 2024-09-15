@@ -5,7 +5,10 @@ const LicenseCard = ({ license }) => {
   return (
     <div className="license-card">
       <div className="license-info">
-        <label className="license-title">{license.title}</label>
+        <label>
+          <span className="license-title-name">{license.title}</span> -{" "}
+          <span className="license-title-provider">{license.provider}</span>
+        </label>
         <div className="license-links">
           {license.credentialUrl && (
             <a

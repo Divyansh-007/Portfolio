@@ -1,40 +1,61 @@
-.work-card{
+.work-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row-reverse;
+    flex-direction: row-reverse; /* Reverse the direction: logo on the left, details on the right */
     padding: 8px;
-    width: 45%;
+    width: 100%;
     margin-top: 16px;
-
 }
 
-.work-logo{
-    height: 80px;
+.work-logo {
+    flex-shrink: 0;
+    width: 20%; /* The logo will take up 20% of the card's width */
+    max-width: 150px; /* Maximum size to ensure it doesn't grow too large */
+    max-height: 150px; /* Ensures the aspect ratio stays intact */
+    object-fit: contain; /* Keeps the image from stretching */
 }
 
-.work-info{
+.work-info {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    width: 75%; /* Let the info take the remaining space */
 }
 
-.work-dates{
+.work-dates {
     color: gray;
 }
 
-.work-desc{
+.work-desc {
     text-align: left;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: horizontal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 80%;
+    /* Remove the line-clamp to avoid trimming */
+    display: block; /* Let the content expand naturally */
+    overflow: visible; /* Ensure no content is hidden */
+    text-overflow: initial; /* No ellipsis */
+    max-width: 100%; /* Full width for the description */
 }
 
-@media only screen and (max-width: 720px){
-    .work-card{
-        width: 100%;
+@media only screen and (max-width: 720px) {
+    .work-card {
+        flex-direction: column; /* Change to column layout */
+        align-items: center; /* Center everything */
+    }
+
+    .work-logo {
+        width: 100%; /* Logo takes full width */
+        max-width: 100px; /* Adjust the maximum size for responsiveness */
+        max-height: 100px;
+        margin-bottom: 8px; /* Add space between logo and details */
+        align-self: center; /* Center the logo */
+    }
+
+    .work-info {
+        width: 100%; /* Details take full width below the logo */
+        text-align: center; /* Center the text for better alignment with logo */
+    }
+
+    .work-desc {
+        max-width: 100%; /* Ensure the description uses full width */
     }
 }
