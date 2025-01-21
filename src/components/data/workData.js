@@ -6,38 +6,62 @@ export const WorkData = [
   {
     company: "Redrob by Mckinley Rice",
     location: "Noida",
-    designation: "Node Engineer I",
-    joinDate: "02-01-2024",
-    description: [
-      "Jan - March : Worked closely with the <b>Korean development team</b> while learning and fixing issues. Later worked on a polling based <b>chat system</b>.",
-      "Apr - Jun : Worked on revamping exsiting modules to improve performance. Wrote few migration scripts to migrate legacy data of <b>10+ lakhs</b> users.",
-      "July - Present : <b>Leading backend team</b> from last two sprints, one being entire revamp of 3 major modules of the product.",
-    ],
     companyLogo: redrob,
+    roles: [
+      {
+        designation: "Software Developer II",
+        joinDate: "01-02-2025",
+        description: [
+          "Leading the <b>backend development team</b> to deliver scalable, high-performing <b>microservices</b>.",
+          "Designing and implementing new <b>RESTful APIs</b> and optimizing existing systems for performance and reliability.",
+          "Mentoring team members in <b>Node.js</b>, <b>NestJS</b>, and <b>MongoDB</b> best practices.",
+        ],
+      },
+      {
+        designation: "NodeJs Developer I",
+        joinDate: "01-02-2024",
+        endDate: "01-02-2025",
+        description: [
+          "Collaborated with the <b>Korean development team</b>, resolving technical issues in multi-regional services.",
+          "Designed and developed a <b>polling-based chat module</b> with real-time communication capabilities.",
+          "Refactored existing modules, boosting <b>scalability</b> and <b>durability</b> for heavy traffic.",
+          "Wrote efficient <b>migration scripts</b> to handle over <b>1 million user records</b>, ensuring seamless data transformation.",
+          "Led the backend team to complete several <b>Agile sprints</b> and revamp three critical product modules.",
+        ],
+      },
+    ],
   },
   {
     company: "Getout System",
     location: "Gurugram",
-    designation: "Software Development Engineer II",
-    joinDate: "25-07-2022",
-    endDate: "04-10-2023",
-    description: [
-      "Integrated <b>Mastercard's corporate payments system</b>, for our company's payment vertical and scaled it for SDK development.",
-      "By implementing more efficient design and coding practices, I <b>reduced the services' response time</b> by <b>30%</b>, resulting in a faster and more responsive product.",
-      "Through my refactoring efforts and implementation of best practices, I <b>increased the overall performance</b> of the codebase by <b>25%</b>.",
-    ],
     companyLogo: getout,
+    roles: [
+      {
+        designation: "Software Development Engineer II",
+        joinDate: "07-25-2022",
+        endDate: "10-04-2023",
+        description: [
+          "Integrated <b>Mastercard's corporate payment API</b>, scaling the system to support <b>SDK development</b>.",
+          "Enhanced <b>service response time</b> by <b>30%</b> through optimization of <b>API architecture</b> and database queries.",
+          "Improved <b>codebase efficiency</b> by <b>25%</b> using modular design, best coding practices, and comprehensive testing.",
+        ],
+      },
+    ],
   },
   {
     company: "RxLogix Corporation India Pvt Ltd",
     location: "Noida",
-    designation: "Associate Software Engineer I",
-    joinDate: "23-06-2021",
-    endDate: "18-07-2022",
-    description: [
-      "As a <b>Java developer</b>, I improved the stability and performance of a utility product by fixing <b>50+ bugs</b>, resulting in a <b>20% improvement</b>.",
-      "I also <b>led the development</b> of a feature release that integrated docker installation capabilities, resulting in a <b>40% reduction</b> in installation errors reported by users.",
-    ],
     companyLogo: rxlogix,
+    roles: [
+      {
+        designation: "Associate Software Engineer I",
+        joinDate: "06-23-2021",
+        endDate: "07-18-2022",
+        description: [
+          "Improved product stability and performance as a <b>Java developer</b> by resolving over <b>50+ critical bugs</b>.",
+          "Led the development of a feature release integrating <b>Docker installation</b>, reducing installation errors by <b>40%</b>.",
+        ],
+      },
+    ],
   },
 ];

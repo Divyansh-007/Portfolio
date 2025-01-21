@@ -1,5 +1,4 @@
 .work-card {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row-reverse; /* Reverse the direction: logo on the left, details on the right */

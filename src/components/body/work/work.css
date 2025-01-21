@@ -1,13 +1,97 @@
-.work{
+.work-group {
     display: flex;
     flex-direction: column;
-    width: 100%;
-}
-
-.work-list{
+    align-items: flex-start;
+    margin: 20px 0;
+    padding: 12px;
+    border-left: 2px solid #0073b1;
+  }
+  
+  .work-group-company {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
-    margin: 24px 0px;
-}
+    margin-bottom: 12px;
+  }
+  
+  .work-group-company img {
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+    object-fit: contain;
+  }
+  
+  .work-group-company span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .work-group-duration {
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+
+  }
+  
+  .work-entry {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 8px; /* Reduced margin for tighter grouping */
+  }
+  
+  .work-entry-timeline {
+    width: 15px; /* Reduced width for a tighter look */
+    margin-right: 8px; /* Minimized spacing between dot and WorkCard */
+    position: relative;
+  }
+  
+  .work-entry-transition {
+    position: relative;
+  }
+  
+  .work-entry-transition-line {
+    width: 2px;
+    height: 100%;
+    background-color: #ccc;
+    margin: 0 auto;
+  }
+  
+  .work-entry-transition-dot {
+    width: 8px; /* Smaller dot size */
+    height: 8px;
+    background-color: #0073b1;
+    border-radius: 50%;
+    position: absolute;
+    top: -4px; /* Center the dot vertically */
+    left: 4px; /* Adjust alignment for better spacing */
+  }
+  
+  .work-info {
+    width: calc(100% - 15px - 8px); /* Adjust width dynamically to fit next to the timeline */
+  }
+  
+  @media only screen and (max-width: 720px) {
+    .work-group-company {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .work-group-company img {
+      margin-bottom: 8px;
+    }
+  
+    .work-group-duration {
+      margin-left: 0;
+    }
+  
+    .work-entry {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .work-entry-timeline {
+      margin-right: 0;
+    }
+  }
+  

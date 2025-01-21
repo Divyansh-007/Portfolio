@@ -1,17 +1,16 @@
 import React from "react";
 import "./work-card.css";
 
-const WorkCard = ({ work }) => {
+const WorkCard = ({ work, location }) => {
   return (
     <div className="work-card">
-      <img src={work.companyLogo} alt={work.company} className="work-logo" />
       <div className="work-info">
         <label className="company-name">
-          <b>{work.designation}</b>, {work.company}
+          <b>{work.designation}</b>
         </label>
         <div className="work-dates">
           {work.joinDate} - {work.endDate ? work.endDate : "Present"} |{" "}
-          {work.location}
+          {location}
         </div>
         <div className="work-desc">
           <ul>
