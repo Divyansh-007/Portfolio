@@ -6,6 +6,7 @@ import Skills from "../body/skills/index";
 import Work from "../body/work/index";
 import Contact from "../body/contact/index";
 import Licenses from "./certificates";
+import Packages from "./packages";
 
 const Body = () => {
   return (
@@ -18,6 +19,9 @@ const Body = () => {
       </section>
       <section id="skills">
         <Skills />
+      </section>
+      <section id="packages">
+        <Packages />
       </section>
       <section id="certificates">
         <Licenses />

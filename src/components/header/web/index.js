@@ -15,6 +15,11 @@ const Web = () => {
         </a>
       </div>
       <div className="web-option">
+        <a href="#packages">
+          <i class="fab fa-npm option-icon"></i>Packages
+        </a>
+      </div>
+      <div className="web-option">
         <a href="#certificates">
           <i class="fas fa-check-double option-icon"></i>Certificates
         </a>
