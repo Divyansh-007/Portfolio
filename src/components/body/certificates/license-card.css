@@ -3,28 +3,34 @@
   flex: 1;
   justify-content: space-between;
   align-items: center;
-  margin: 16px 0px;
-  padding: 8px 0px;
+  margin: 12px 0px;
+  padding: 6px 0px;
 }
 
 .license-image {
   width: min-content;
-  max-width: 40%;
+  max-width: 25%;
+  height: auto;
 }
 
 .license-info {
-  margin-right: 24px;
+  margin-right: 20px;
 }
 
 .license-title-name {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 800;
 }
 
 .license-title-provider {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   font-style: italic;
+}
+
+.license-about {
+  font-size: 16px;
+  margin: 8px 0px;
 }
 
 .license-tags {
@@ -39,10 +45,11 @@
   border-radius: 4px;
   margin-right: 6px;
   margin-bottom: 4px;
+  font-size: 14px;
 }
 
 .license-links {
-  margin-top: 6px;
+  margin-top: 5px;
   display: flex;
 }
 
@@ -57,29 +64,29 @@
   align-items: center;
   background-color: aquamarine;
   width: max-content;
-  padding: 4px 8px;
+  padding: 3px 6px;
   border-radius: 4px;
-  font-size: 16px;
-  margin-right: 6px;
+  font-size: 14px;
+  margin-right: 5px;
 }
 
 .link-button i {
   display: flex;
   align-items: center;
-  margin-right: 4px;
+  margin-right: 3px;
 }
 
 @media only screen and (max-width: 720px) {
   .license-image {
     width: min-content;
-    max-width: 70%;
+    max-width: 40%;
   }
   .license-card {
     flex-direction: column-reverse;
   }
   .license-info {
     margin-left: 0px;
-    margin-top: 12px;
+    margin-top: 10px;
   }
   .license-tags {
     max-width: 100%;

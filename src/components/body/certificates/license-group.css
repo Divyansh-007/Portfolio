@@ -1,0 +1,54 @@
+.license-group {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.group-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.group-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #64b5f6 !important;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 10px rgba(100, 181, 246, 0.4);
+}
+
+.group-description {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.group-licenses {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .license-group {
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .group-title {
+    font-size: 1.5rem;
+  }
+  
+  .group-description {
+    font-size: 0.9rem;
+  }
+} 
