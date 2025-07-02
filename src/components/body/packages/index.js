@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Separator from "../../common/separator";
 import PackageCard from "./package-card";
 import { PackageData } from "../../data/packages";
 import "./packages.css";
@@ -75,7 +74,6 @@ const Packages = () => {
   if (loading) {
     return (
       <div className="packages">
-        <Separator />
         <label className="section-title">NPM Packages</label>
         <div className="loading">Loading packages...</div>
       </div>
@@ -85,7 +83,6 @@ const Packages = () => {
   if (error) {
     return (
       <div className="packages">
-        <Separator />
         <label className="section-title">NPM Packages</label>
         <div className="error">Error loading packages: {error}</div>
       </div>
@@ -94,7 +91,6 @@ const Packages = () => {
 
   return (
     <div className="packages">
-      <Separator />
       <label className="section-title">NPM Packages</label>
       <div className="packages-container">
         {packages.map((pkg, index) => {

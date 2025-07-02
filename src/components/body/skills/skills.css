@@ -2,34 +2,94 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 30px 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.02) 0%, rgba(118, 75, 162, 0.02) 100%);
 }
 
 .skills-section{
     display: flex;
-    justify-content: space-between;
-    margin: 12px 0;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .skills-section-title{
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 12px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.skills-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
 }
 
 .skills-list{
     display: flex;
     flex-wrap: wrap;
-    max-width: 70%;
-    justify-content: flex-end;
+    justify-content: center;
+    gap: 10px;
+    max-width: 100%;
 }
 
-@media only screen and (max-width:720px){
-    .skills-section{
-        flex-direction: column;
-        align-items: center;
+@media only screen and (max-width:768px){
+    .skills {
+        padding: 20px 0;
     }
-    .skills-list{
-        max-width: 100%;
-        justify-content: center;
+    
+    .skills-section {
+        margin: 12px 0;
+        padding: 10px;
+    }
+    
+    .skills-section-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    
+    .skills-list {
+        gap: 6px;
+    }
+}
 
+@media only screen and (max-width:480px){
+    .skills {
+        padding: 10px 0;
+    }
+    
+    .skills-section {
+        margin: 8px 0;
+        padding: 6px;
+    }
+    
+    .skills-section-title {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+    
+    .skills-list {
+        gap: 4px;
     }
 }

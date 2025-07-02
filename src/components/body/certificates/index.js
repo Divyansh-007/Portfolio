@@ -1,5 +1,4 @@
 import React from "react";
-import Separator from "../../common/separator";
 import { LicenseData, GroupedLicenseData } from "../../data/certificates";
 import LicenseCard from "./license-card";
 import LicenseGroup from "./license-group";
@@ -14,7 +13,6 @@ const Licenses = () => {
 
   return (
     <div className="certificates">
-      <Separator />
       <label className="section-title">Licenses & Certificates </label>
       <div>
         {useGroupedView

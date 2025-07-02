@@ -1,6 +1,5 @@
 import React from "react";
 import "./work.css";
-import Separator from "../../common/separator/index";
 import { WorkData } from "../../data/workData";
 import WorkCard from "./work-card";
 
@@ -21,7 +20,6 @@ const Work = () => {
 
   return (
     <div className="work">
-      <Separator />
       <label className="section-title">Work Experience</label>
       <div className="work-list">
         {WorkData.map((companyData, index) => {
