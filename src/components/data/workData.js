@@ -10,7 +10,7 @@ export const WorkData = [
     roles: [
       {
         designation: "Software Developer II",
-        joinDate: "01-02-2025",
+        joinDate: "2025-02-01",
         description: [
           "Leading the <b>backend development team</b> to deliver scalable, high-performing <b>microservices</b>.",
           "Designing and implementing new <b>RESTful APIs</b> and optimizing existing systems for performance and reliability.",
@@ -19,8 +19,8 @@ export const WorkData = [
       },
       {
         designation: "NodeJs Developer I",
-        joinDate: "01-02-2024",
-        endDate: "01-02-2025",
+        joinDate: "2024-02-01",
+        endDate: "2025-02-01",
         description: [
           "Collaborated with the <b>Korean development team</b>, resolving technical issues in multi-regional services.",
           "Designed and developed a <b>polling-based chat module</b> with real-time communication capabilities.",
@@ -38,8 +38,8 @@ export const WorkData = [
     roles: [
       {
         designation: "Software Development Engineer II",
-        joinDate: "07-25-2022",
-        endDate: "10-04-2023",
+        joinDate: "2022-07-25",
+        endDate: "2023-10-04",
         description: [
           "Integrated <b>Mastercard's corporate payment API</b>, scaling the system to support <b>SDK development</b>.",
           "Enhanced <b>service response time</b> by <b>30%</b> through optimization of <b>API architecture</b> and database queries.",
@@ -55,8 +55,8 @@ export const WorkData = [
     roles: [
       {
         designation: "Associate Software Engineer I",
-        joinDate: "06-23-2021",
-        endDate: "07-18-2022",
+        joinDate: "2021-06-23",
+        endDate: "2022-07-18",
         description: [
           "Improved product stability and performance as a <b>Java developer</b> by resolving over <b>50+ critical bugs</b>.",
           "Led the development of a feature release integrating <b>Docker installation</b>, reducing installation errors by <b>40%</b>.",
