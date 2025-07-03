@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./about.css";
-import image from "../../../assets/coder.jpg";
+import image from "../../../assets/coder.png";
+
 import SocialContact from "../../common/social-contact";
 
 const About = () => {
   const [text, setText] = useState("");
-  const fullText = "Hello there 👋, I am";
+  const fullText = "Hello there 👋, I am a";
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const About = () => {
               <span className="cursor">|</span>
             </div>
             <div className="about-name-container">
-              <span className="about-name">Random Guy</span>
+              <span className="about-name">Builder</span>
               <div className="name-underline"></div>
             </div>
             <div className="about-description">
