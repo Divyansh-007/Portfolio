@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import ThemeToggle from '../common/theme-toggle';
 import './header.css';
 import Mobile from './mobile';
 import Web from './web';
@@ -13,6 +14,7 @@ const Header = () => {
         <div className="web-menu">
           <Web />
         </div>
+        <ThemeToggle />
         <div className="mob-menu">
           <div
             onClick={() => {

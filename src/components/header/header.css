@@ -5,17 +5,22 @@
   padding: 12px;
   position: relative;
   align-items: center;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .menu {
   display: flex;
-  background-color: white;
+  background-color: var(--bg-primary);
   flex: 1;
   justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
 }
 
 .menu-icon {
   font-size: 24px;
+  color: var(--text-primary);
 }
 
 .mob-menu {
@@ -30,7 +35,7 @@
   display: flex;
   font-size: 36px;
   font-weight: 800;
-  color: cornflowerblue;
+  color: var(--accent-color);
 }
 
 @media only screen and (max-width: 720px) {

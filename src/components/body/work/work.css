@@ -36,10 +36,10 @@
   align-items: center;
   margin-bottom: 20px;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--card-bg);
   border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px var(--shadow-color);
+  border: 1px solid var(--card-border);
   backdrop-filter: blur(10px);
   position: relative;
   z-index: 2;
@@ -79,7 +79,7 @@
 .work-group-company span {
   font-size: 22px;
   font-weight: 700;
-  color: #333;
+  color: var(--text-primary);
   flex: 1;
 }
 

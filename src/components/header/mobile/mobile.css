@@ -1,5 +1,5 @@
 .mobile {
-  background-color: white;
+  background-color: var(--bg-primary);
   height: 100vh;
   width: 60vw;
   position: absolute;
@@ -8,6 +8,7 @@
   padding: 18px 12px;
   display: flex;
   flex-direction: column;
+  border-left: 1px solid var(--border-color);
 }
 
 .close-icon {
@@ -34,6 +35,6 @@
 
 .mob-option a {
   text-decoration: none;
-  color: black;
+  color: var(--text-primary);
   display: flex;
 }

@@ -41,7 +41,7 @@
   margin-bottom: 40px;
   font-size: 32px;
   font-weight: 700;
-  color: #333;
+  color: var(--text-primary);
   position: relative;
 }
 .section-title::after {
