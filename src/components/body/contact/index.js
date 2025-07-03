@@ -1,7 +1,8 @@
-import React from "react";
-import "./contact.css";
-import SocialContact from "../../common/social-contact/index";
-import { SocialData } from "../../data/socialData";
+import React from 'react';
+
+import './contact.css';
+import SocialContact from '../../common/social-contact/index';
+import { SocialData } from '../../data/socialData';
 
 const Contact = () => {
   return (
@@ -29,7 +30,7 @@ const Contact = () => {
               </a>
               <a
                 href={
-                  SocialData.find((social) => social.platform === "linkedIn")
+                  SocialData.find(social => social.platform === 'linkedIn')
                     ?.link
                 }
                 className="contact-option"
@@ -41,8 +42,7 @@ const Contact = () => {
               </a>
               <a
                 href={
-                  SocialData.find((social) => social.platform === "gitHub")
-                    ?.link
+                  SocialData.find(social => social.platform === 'gitHub')?.link
                 }
                 className="contact-option"
                 target="_blank"

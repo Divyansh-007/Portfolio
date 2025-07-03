@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Portfolio
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -9,7 +9,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
@@ -38,6 +38,60 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Code Quality & Git Hooks
+
+This project uses automated code quality checks with git hooks:
+
+### Pre-commit Hook (Fast)
+
+- Runs on every commit
+- Checks code formatting (`npm run format:check`)
+- Runs basic linting (`npm run lint`)
+
+### Pre-push Hook (Comprehensive)
+
+- Runs before pushing to remote
+- Ensures no lint warnings (`npm run lint:check`)
+- Verifies code formatting (`npm run format:check`)
+- Builds the project (`npm run build`)
+
+### Skipping Hooks (Emergency)
+
+If you need to skip hooks for an emergency commit/push:
+
+```bash
+# Skip pre-commit hook
+git commit --no-verify -m "Emergency fix"
+
+# Skip pre-push hook
+git push --no-verify
+
+# Skip both
+git commit --no-verify -m "Emergency fix" && git push --no-verify
+```
+
+### Manual Commands
+
+```bash
+# Format code
+npm run format
+
+# Check formatting
+npm run format:check
+
+# Lint code
+npm run lint
+
+# Fix lint issues
+npm run lint:fix
+
+# Strict lint check (no warnings allowed)
+npm run lint:check
+
+# Build project
+npm run build
+```
 
 ## Learn More
 

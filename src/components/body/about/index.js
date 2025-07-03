@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import "./about.css";
-import image from "../../../assets/coder.png";
+import React, { useState, useEffect } from 'react';
 
-import SocialContact from "../../common/social-contact";
+import './about.css';
+import image from '../../../assets/coder.png';
+import SocialContact from '../../common/social-contact';
 
 const About = () => {
-  const [text, setText] = useState("");
-  const fullText = "Hello there 👋, I am a";
+  const [text, setText] = useState('');
+  const fullText = 'Hello there 👋, I am a';
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {

@@ -1,6 +1,7 @@
-import React from "react";
-import LicenseCard from "./license-card";
-import "./license-group.css";
+import React from 'react';
+
+import LicenseCard from './license-card';
+import './license-group.css';
 
 const LicenseGroup = ({ group }) => {
   return (
@@ -10,7 +11,7 @@ const LicenseGroup = ({ group }) => {
         <p className="group-description">{group.groupDescription}</p>
       </div>
       <div className="group-licenses">
-        {group.licenses.map((license) => {
+        {group.licenses.map(license => {
           return <LicenseCard license={license} key={license.id} />;
         })}
       </div>

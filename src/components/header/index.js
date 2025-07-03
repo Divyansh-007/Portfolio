@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import "./header.css";
-import Mobile from "./mobile";
-import Web from "./web";
+import React, { useState } from 'react';
+
+import './header.css';
+import Mobile from './mobile';
+import Web from './web';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ const Header = () => {
               setIsOpen(!isOpen);
             }}
           >
-            <i class="fas fa-bars menu-icon"></i>
+            <i className="fas fa-bars menu-icon"></i>
           </div>
           {isOpen && <Mobile isOpen={isOpen} setIsOpen={setIsOpen} />}
         </div>

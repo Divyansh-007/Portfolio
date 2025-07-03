@@ -1,5 +1,5 @@
-import React from "react";
-import "./project-card.css";
+import React from 'react';
+import './project-card.css';
 
 const ProjectCard = ({ project }) => {
   return (
@@ -11,11 +11,12 @@ const ProjectCard = ({ project }) => {
             <a
               href={project.demo}
               target="_blank"
+              rel="noreferrer"
               className="project-link"
               key={`$project.id$_demo`}
             >
               <div className="link-button">
-                <i class="fas fa-globe"></i>Demo
+                <i className="fas fa-globe"></i>Demo
               </div>
             </a>
           )}
@@ -23,11 +24,12 @@ const ProjectCard = ({ project }) => {
             <a
               href={project.github}
               target="_blank"
+              rel="noreferrer"
               className="project-link"
               key={`$project.id_github$`}
             >
               <div className="link-button">
-                <i class="devicon-github-original colored"></i>Github
+                <i className="devicon-github-original colored"></i>Github
               </div>
             </a>
           )}
@@ -43,7 +45,7 @@ const ProjectCard = ({ project }) => {
           })}
         </div>
       </div>
-      <img src={project.image} className="project-image" />
+      <img src={project.image} className="project-image" alt={project.title} />
     </div>
   );
 };

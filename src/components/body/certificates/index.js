@@ -1,8 +1,10 @@
-import React from "react";
-import { LicenseData, GroupedLicenseData } from "../../data/certificates";
-import LicenseCard from "./license-card";
-import LicenseGroup from "./license-group";
-import "./license.css";
+import React from 'react';
+
+import { LicenseData, GroupedLicenseData } from '../../data/certificates';
+
+import LicenseCard from './license-card';
+import LicenseGroup from './license-group';
+import './license.css';
 
 const Licenses = () => {
   // You can switch between grouped and ungrouped view by changing this variable
@@ -17,11 +19,11 @@ const Licenses = () => {
       <div>
         {useGroupedView
           ? // Grouped view with headings
-            groupedData.map((group) => {
+            groupedData.map(group => {
               return <LicenseGroup group={group} key={group.groupTitle} />;
             })
           : // Original ungrouped view
-            data.map((license) => {
+            data.map(license => {
               return <LicenseCard license={license} key={license.id} />;
             })}
       </div>

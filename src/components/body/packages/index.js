@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
-import PackageCard from "./package-card";
-import { PackageData } from "../../data/packages";
-import "./packages.css";
+import React, { useState, useEffect } from 'react';
+
+import { PackageData } from '../../data/packages';
+
+import PackageCard from './package-card';
+import './packages.css';
 
 const Packages = () => {
   const [packages, setPackages] = useState([]);
@@ -15,7 +17,7 @@ const Packages = () => {
     const fetchPackages = async () => {
       try {
         setLoading(true);
-        const packagePromises = packageNames.map(async (packageName) => {
+        const packagePromises = packageNames.map(async packageName => {
           const response = await fetch(
             `https://registry.npmjs.org/${packageName}`
           );
@@ -25,7 +27,7 @@ const Packages = () => {
           const data = await response.json();
 
           // Get the latest version info
-          const latestVersion = data["dist-tags"].latest;
+          const latestVersion = data['dist-tags'].latest;
           const latestData = data.versions[latestVersion];
 
           // Try to fetch download stats from npm stats API
@@ -48,14 +50,14 @@ const Packages = () => {
           return {
             name: packageName,
             version: latestVersion,
-            description: latestData.description || "No description available",
+            description: latestData.description || 'No description available',
             downloads: downloads,
             repository: latestData.repository?.url || null,
             homepage: latestData.homepage || null,
             keywords: latestData.keywords || [],
-            license: latestData.license || "Unknown",
+            license: latestData.license || 'Unknown',
             lastModified:
-              data.time?.modified || data.time?.created || "Unknown",
+              data.time?.modified || data.time?.created || 'Unknown',
           };
         });
 

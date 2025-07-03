@@ -1,5 +1,5 @@
-import React from "react";
-import "./work-card.css";
+import React from 'react';
+import './work-card.css';
 
 const WorkCard = ({ work, location }) => {
   return (
@@ -16,7 +16,7 @@ const WorkCard = ({ work, location }) => {
           <div className="work-dates">
             <i className="fas fa-calendar-alt"></i>
             <span>
-              {work.joinDate} - {work.endDate ? work.endDate : "Present"}
+              {work.joinDate} - {work.endDate ? work.endDate : 'Present'}
             </span>
           </div>
           <div className="work-location">

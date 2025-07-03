@@ -1,7 +1,9 @@
-import React from "react";
-import "./skills.css";
-import { SkillData } from "../../data/skillData";
-import SkillCard from "./skillCard";
+import React from 'react';
+
+import './skills.css';
+import { SkillData } from '../../data/skillData';
+
+import SkillCard from './skillCard';
 
 const Skills = () => {
   const data = SkillData;

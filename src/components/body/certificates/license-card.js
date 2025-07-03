@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import "./license-card.css";
+import React, { useState } from 'react';
+import './license-card.css';
 
 const LicenseCard = ({ license }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className={`license-card ${isHovered ? "hovered" : ""}`}
+      className={`license-card ${isHovered ? 'hovered' : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

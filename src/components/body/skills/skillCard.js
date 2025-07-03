@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./skill-card.css";
+import React, { useState } from 'react';
+import './skill-card.css';
 
 const SkillCard = ({ skill }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -8,7 +8,7 @@ const SkillCard = ({ skill }) => {
 
   return (
     <div
-      className={`skill-card ${isHovered ? "hovered" : ""}`}
+      className={`skill-card ${isHovered ? 'hovered' : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

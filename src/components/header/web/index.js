@@ -1,27 +1,27 @@
-import React from "react";
-import "./web.css";
+import React from 'react';
+import './web.css';
 
 const Web = () => {
   return (
     <div className="web">
       <div className="web-option">
         <a href="#work">
-          <i class="fas fa-briefcase option-icon"></i>Work
+          <i className="fas fa-briefcase option-icon"></i>Work
         </a>
       </div>
       <div className="web-option">
         <a href="#skills">
-          <i class="fas fa-laptop-code option-icon"></i>Skills
+          <i className="fas fa-laptop-code option-icon"></i>Skills
         </a>
       </div>
       <div className="web-option">
         <a href="#packages">
-          <i class="fab fa-npm option-icon"></i>Packages
+          <i className="fab fa-npm option-icon"></i>Packages
         </a>
       </div>
       <div className="web-option">
         <a href="#certificates">
-          <i class="fas fa-check-double option-icon"></i>Certificates
+          <i className="fas fa-check-double option-icon"></i>Certificates
         </a>
       </div>
       {/* <div className="web-option">
@@ -31,7 +31,7 @@ const Web = () => {
       </div> */}
       <div className="web-option">
         <a href="#contact">
-          <i class="fas fa-envelope option-icon"></i>Contact
+          <i className="fas fa-envelope option-icon"></i>Contact
         </a>
       </div>
     </div>

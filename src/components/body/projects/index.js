@@ -1,7 +1,9 @@
-import React from "react";
-import { ProjectData } from "../../data/projects";
-import ProjectCard from "./project-card";
-import "./projects.css";
+import React from 'react';
+
+import { ProjectData } from '../../data/projects';
+
+import ProjectCard from './project-card';
+import './projects.css';
 
 const Projects = () => {
   const data = ProjectData;
@@ -9,7 +11,7 @@ const Projects = () => {
     <div className="projects">
       <label className="section-title">Projects</label>
       <div>
-        {data.map((project) => {
+        {data.map(project => {
           return <ProjectCard project={project} key={project.id} />;
         })}
       </div>

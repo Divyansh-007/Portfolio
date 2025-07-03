@@ -1,6 +1,10 @@
 .work {
   padding: 60px 0;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.03) 0%, rgba(118, 75, 162, 0.03) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.03) 0%,
+    rgba(118, 75, 162, 0.03) 100%
+  );
 }
 
 .work-list {
@@ -141,61 +145,61 @@
   .work {
     padding: 40px 0;
   }
-  
+
   .work-list {
     padding: 0 15px;
   }
-  
+
   .work-group {
     margin: 30px 0;
   }
-  
+
   .work-group::before {
     left: 20px;
   }
-  
+
   .work-group-company {
     padding: 15px;
     margin-bottom: 15px;
   }
-  
+
   .work-group-company::before {
     left: -10px;
     width: 20px;
     height: 20px;
   }
-  
+
   .work-group-company img {
     width: 50px;
     height: 50px;
     margin-right: 15px;
   }
-  
+
   .work-group-company span {
     font-size: 18px;
   }
-  
+
   .work-group-duration {
     font-size: 14px;
     padding: 6px 12px;
   }
-  
+
   .work-entry {
     margin-left: 40px;
   }
-  
+
   .work-entry-timeline {
     width: 15px;
     margin-right: 15px;
   }
-  
+
   .work-entry-transition-dot {
     width: 10px;
     height: 10px;
     top: 15px;
     left: 2.5px;
   }
-  
+
   .work-info {
     width: calc(100% - 30px);
   }
@@ -205,57 +209,57 @@
   .work-list {
     padding: 0 10px;
   }
-  
+
   .work-group {
     margin: 20px 0;
   }
-  
+
   .work-group::before {
     left: 15px;
   }
-  
+
   .work-group-company {
     padding: 12px;
     margin-bottom: 12px;
   }
-  
+
   .work-group-company::before {
     left: -7.5px;
     width: 15px;
     height: 15px;
   }
-  
+
   .work-group-company img {
     width: 40px;
     height: 40px;
     margin-right: 12px;
   }
-  
+
   .work-group-company span {
     font-size: 16px;
   }
-  
+
   .work-group-duration {
     font-size: 12px;
     padding: 4px 10px;
   }
-  
+
   .work-entry {
     margin-left: 30px;
   }
-  
+
   .work-entry-timeline {
     width: 12px;
     margin-right: 12px;
   }
-  
+
   .work-entry-transition-dot {
     width: 8px;
     height: 8px;
     top: 12px;
     left: 2px;
   }
-  
+
   .work-info {
     width: calc(100% - 24px);
   }
@@ -282,4 +286,3 @@
   background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
   border-radius: 2px;
 }
-  

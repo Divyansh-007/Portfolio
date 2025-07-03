@@ -1,20 +1,20 @@
-import React from "react";
-import "./package-card.css";
+import React from 'react';
+import './package-card.css';
 
 const PackageCard = ({ package: pkg }) => {
-  const formatDate = (dateString) => {
-    if (dateString === "Unknown") return "Unknown";
+  const formatDate = dateString => {
+    if (dateString === 'Unknown') return 'Unknown';
     return new Date(dateString).toLocaleDateString();
   };
 
-  const getNpmUrl = (packageName) => {
+  const getNpmUrl = packageName => {
     return `https://www.npmjs.com/package/${packageName}`;
   };
 
-  const getGitHubUrl = (repositoryUrl) => {
+  const getGitHubUrl = repositoryUrl => {
     if (!repositoryUrl) return null;
     // Convert git+https://github.com/user/repo.git to https://github.com/user/repo
-    return repositoryUrl.replace(/^git\+/, "").replace(/\.git$/, "");
+    return repositoryUrl.replace(/^git\+/, '').replace(/\.git$/, '');
   };
 
   return (

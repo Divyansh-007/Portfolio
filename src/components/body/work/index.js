@@ -1,7 +1,9 @@
-import React from "react";
-import "./work.css";
-import { WorkData } from "../../data/workData";
-import WorkCard from "./work-card";
+import React from 'react';
+
+import './work.css';
+import { WorkData } from '../../data/workData';
+
+import WorkCard from './work-card';
 
 const Work = () => {
   // Calculate the duration between two dates in years and months
@@ -15,7 +17,7 @@ const Work = () => {
         1
     );
     const years = Math.floor(months / 12);
-    return `${years > 0 ? `${years} years ` : ""}${months % 12} months`;
+    return `${years > 0 ? `${years} years ` : ''}${months % 12} months`;
   };
 
   return (

@@ -1,12 +1,13 @@
-import React from "react";
-import "./body.css";
-import About from "../body/about/index";
-import Projects from "../body/projects/index";
-import Skills from "../body/skills/index";
-import Work from "../body/work/index";
-import Contact from "../body/contact/index";
-import Licenses from "./certificates";
-import Packages from "./packages";
+import React from 'react';
+
+import './body.css';
+import About from '../body/about/index';
+import Contact from '../body/contact/index';
+import Skills from '../body/skills/index';
+import Work from '../body/work/index';
+
+import Licenses from './certificates';
+import Packages from './packages';
 
 const Body = () => {
   return (
