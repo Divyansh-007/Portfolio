@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { LicenseData, GroupedLicenseData } from '../../data/certificates';
 
 import LicenseCard from './license-card';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ProjectData } from '../../data/projects';
 
 import ProjectCard from './project-card';

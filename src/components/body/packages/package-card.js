@@ -1,4 +1,3 @@
-import React from 'react';
 import './package-card.css';
 
 const PackageCard = ({ package: pkg }) => {

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './skills.css';
 import { SkillData } from '../../data/skillData';
 

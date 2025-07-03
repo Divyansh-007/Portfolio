@@ -1,5 +1,3 @@
-import React from 'react';
-
 import LicenseCard from './license-card';
 import './license-group.css';
 

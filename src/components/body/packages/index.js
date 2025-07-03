@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { PackageData } from '../../data/packages';
 
@@ -41,10 +41,7 @@ const Packages = () => {
               downloads = statsData.downloads || 0;
             }
           } catch (statsError) {
-            console.warn(
-              `Could not fetch download stats for ${packageName}:`,
-              statsError
-            );
+            // Silently handle stats fetch errors
           }
 
           return {

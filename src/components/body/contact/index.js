@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './contact.css';
 import SocialContact from '../../common/social-contact/index';
 import { SocialData } from '../../data/socialData';

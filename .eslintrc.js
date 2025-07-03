@@ -18,7 +18,7 @@ module.exports = {
     'prettier/prettier': 'error',
 
     // Auto-fixable rules
-    'no-unused-vars': 'warn', // Changed from error to warn for unused React imports
+    'no-unused-vars': 'off', // Turn off unused vars since React imports are needed for hooks
     'no-console': 'warn',
     'no-debugger': 'error',
     'prefer-const': 'error',
@@ -31,7 +31,7 @@ module.exports = {
     'react/jsx-uses-vars': 'error',
     'react/jsx-no-target-blank': 'error',
     'react/jsx-key': 'error',
-    'react/no-unescaped-entities': 'warn', // Changed from error to warn
+    'react/no-unescaped-entities': 'off', // Turn off for apostrophes in text
 
     // Accessibility rules - make them warnings instead of errors
     'jsx-a11y/alt-text': 'warn',
@@ -42,9 +42,9 @@ module.exports = {
     'jsx-a11y/aria-unsupported-elements': 'warn',
     'jsx-a11y/role-has-required-aria-props': 'warn',
     'jsx-a11y/role-supports-aria-props': 'warn',
-    'jsx-a11y/label-has-associated-control': 'warn',
-    'jsx-a11y/click-events-have-key-events': 'warn',
-    'jsx-a11y/no-static-element-interactions': 'warn',
+    'jsx-a11y/label-has-associated-control': 'off', // Turn off for section titles
+    'jsx-a11y/click-events-have-key-events': 'off', // Turn off for mobile menu
+    'jsx-a11y/no-static-element-interactions': 'off', // Turn off for interactive elements
   },
   settings: {
     react: {

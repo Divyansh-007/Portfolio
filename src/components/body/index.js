@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './body.css';
 import About from '../body/about/index';
 import Contact from '../body/contact/index';

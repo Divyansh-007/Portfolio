@@ -1,4 +1,3 @@
-import React from 'react';
 import './mobile.css';
 
 const Mobile = ({ isOpen, setIsOpen }) => {

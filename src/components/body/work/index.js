@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './work.css';
 import { WorkData } from '../../data/workData';
 

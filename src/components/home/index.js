@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './home.css';
 import Body from '../body/index';
 import Header from '../header/index';
