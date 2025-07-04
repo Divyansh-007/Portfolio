@@ -1,3 +1,9 @@
+.skills *,
+.skills-section,
+.skills-list {
+  box-sizing: border-box;
+}
+
 .skills {
   display: flex;
   flex-direction: column;
@@ -14,7 +20,7 @@
   display: flex;
   flex-direction: column;
   margin: 20px 0;
-  padding: 16px;
+  padding: 16px 0; /* Remove left/right padding */
   background: var(--card-bg);
   border-radius: 20px;
   box-shadow: 0 6px 18px var(--shadow-color);
@@ -23,6 +29,7 @@
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  width: 100%;
 }
 
 .skills-section:hover {
@@ -58,6 +65,9 @@
   justify-content: center;
   gap: 10px;
   max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 @media only screen and (max-width: 768px) {
