@@ -69,6 +69,11 @@ export const SkillData = [
         proficiency: 4.5,
       },
       {
+        name: 'GCP',
+        icon: <i className="devicon-googlecloud-plain colored"></i>,
+        proficiency: 2,
+      },
+      {
         name: 'Linux',
         icon: <i className="devicon-linux-plain"></i>,
         proficiency: 6,
