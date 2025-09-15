@@ -35,9 +35,11 @@ const WorkCard = ({ work, location }) => {
       </div>
       <div className="work-card-footer">
         <div className="work-tags">
-          <span className="tag">Development</span>
-          <span className="tag">Team Lead</span>
-          <span className="tag">Agile</span>
+          {work.tags.map((tag, index) => (
+            <span className="tag" key={index}>
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
     </div>
