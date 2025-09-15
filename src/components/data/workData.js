@@ -12,9 +12,9 @@ export const WorkData = [
         designation: 'Software Developer II',
         joinDate: '2025-02-01',
         description: [
-          'Leading the <b>backend development team</b> to deliver scalable, high-performing <b>microservices</b>.',
-          'Designing and implementing new <b>RESTful APIs</b> and optimizing existing systems for performance and reliability.',
-          'Mentoring team members in <b>Node.js</b>, <b>NestJS</b>, and <b>MongoDB</b> best practices.',
+          'Delivered <b>scalable, high-performance RESTful APIs</b> in <b>Node.js, NestJS, and MongoDB</b> for production systems, improving system reliability and throughput.',
+          'Optimized a critical <b>GET API</b> by introducing <b>Mongoose</b> as a secondary ORM (for read operations) alongside <b>Prisma</b>, reducing response time from <b>43s to 3.25s</b> and significantly enhancing user experience.',
+          'Mentored junior developers on best practices in <b>Node.js, NestJS, and MongoDB</b>, driving code quality, performance improvements, and knowledge sharing within the team.',
         ],
       },
       {
@@ -22,11 +22,10 @@ export const WorkData = [
         joinDate: '2024-02-01',
         endDate: '2025-02-01',
         description: [
-          'Collaborated with the <b>Korean development team</b>, resolving technical issues in multi-regional services.',
-          'Designed and developed a <b>polling-based chat module</b> with real-time communication capabilities.',
-          'Refactored existing modules, boosting <b>scalability</b> and <b>durability</b> for heavy traffic.',
-          'Wrote efficient <b>migration scripts</b> to handle over <b>1 million user records</b>, ensuring seamless data transformation.',
-          'Led the backend team to complete several <b>Agile sprints</b> and revamp three critical product modules.',
+          'Collaborated with the <b>Korean development team</b> to resolve multi-regional service issues, ensuring smooth cross-border product performance using <b>Node.js, Express, and MongoDB</b>.',
+          'Built a <b>REST API–driven chat module</b> (Node.js, Express, MongoDB) supporting text, documents, and images, with attachments stored on <b>AWS S3</b>. Implemented a 15s polling mechanism (fetch API) to enable near real-time communication without WebSockets.',
+          'Refactored core modules in <b>Node.js and MongoDB</b> to improve <b>scalability</b> and <b>resilience</b>, handling high traffic loads with greater efficiency and stability.',
+          'Contributed to the U.S. product launch, showcased to investors during <b>Series A</b> funding, demonstrating technical expertise with <b>AWS, Docker, and Linux</b> in a production environment.',
         ],
       },
     ],
