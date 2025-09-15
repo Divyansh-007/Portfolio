@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import './about.css';
 import image from '../../../assets/coder.png';
 import SocialContact from '../../common/social-contact';
+import './about.css';
 
 const About = () => {
   const [text, setText] = useState('');
@@ -40,7 +40,7 @@ const About = () => {
             </div>
             <div className="about-stats">
               <div className="stat-item">
-                <span className="stat-number">3+</span>
+                <span className="stat-number">4+</span>
                 <span className="stat-label">Years Experience</span>
               </div>
               <div className="stat-item">
