@@ -42,9 +42,9 @@ const Contact = () => {
         </div>
       </div>
       <pre className="contact-resume-box">
-        {`┌──────────────────────────────────┐
-│  📄 Download Resume (PDF)        │
-└──────────────────────────────────┘`}
+        {`┌──────────────────────────┐
+│ 📄 Download Resume (PDF) │
+└──────────────────────────┘`}
       </pre>
       <a
         href="https://drive.google.com/drive/folders/141ClIvfepSzNhSMTGU6mhawfa3piVhi5?usp=sharing"

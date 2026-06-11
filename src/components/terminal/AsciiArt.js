@@ -23,7 +23,7 @@ const AsciiArt = () => {
           Welcome to my portfolio. Scroll to explore.
         </span>
         <span className="motd-line motd-sub">
-          Backend Engineer | Node.js | Python | AWS | Docker
+          Backend And AI Engineer | Node.js | Python | AWS | Docker
         </span>
       </div>
     </div>

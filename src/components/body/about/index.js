@@ -14,7 +14,7 @@ const About = () => {
           <span className="about-key">role</span>
           <span className="about-sep">: </span>
           <span className="about-val-string">
-            "Backend Engineer &amp; Builder"
+            "Backend And AI Engineer &amp; Builder"
           </span>
         </span>
         <span className="about-line">

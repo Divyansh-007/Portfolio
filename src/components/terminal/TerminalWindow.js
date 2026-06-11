@@ -9,7 +9,7 @@ const TerminalWindow = ({ children }) => {
           <span className="dot dot-yellow"></span>
           <span className="dot dot-green"></span>
         </div>
-        <div className="terminal-title">divyansh@portfolio:~ — zsh</div>
+        <div className="terminal-title">divyansh-jaiswal@portfolio:~ — zsh</div>
         <div className="terminal-dots-spacer"></div>
       </div>
       <div className="terminal-content">{children}</div>
