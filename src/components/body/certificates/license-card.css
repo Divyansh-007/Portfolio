@@ -1,292 +1,63 @@
-.license-card {
-  position: relative;
-  background: var(--card-bg);
-  border-radius: 20px;
-  padding: 24px;
-  margin: 16px 0;
-  box-shadow: 0 8px 25px var(--shadow-color);
-  border: 1px solid var(--card-border);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-  cursor: pointer;
+.cert-entry {
+  padding: 4px 0;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
-.license-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.3);
+.cert-prefix {
+  color: var(--accent-yellow);
 }
 
-.license-card.hovered {
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.license-card-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.background-gradient {
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(102, 126, 234, 0.05) 0%,
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.license-card:hover .background-gradient {
-  opacity: 1;
-}
-
-.license-card-content {
-  position: relative;
-  z-index: 1;
-}
-
-.license-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
-.license-image-container {
-  position: relative;
-  height: 80px;
-  min-width: 80px;
-  max-width: 180px;
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.license-card:hover .license-image-container {
-  transform: scale(1.05);
-}
-
-.license-image {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(102, 126, 234, 0.1) 0%,
-    rgba(118, 75, 162, 0.1) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.license-card:hover .image-overlay {
-  opacity: 1;
-}
-
-.license-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.license-badge i {
-  font-size: 10px;
-}
-
-.license-body {
-  margin-bottom: 20px;
-}
-
-.license-title-section {
-  margin-bottom: 12px;
-}
-
-.license-title-name {
-  font-size: 20px;
-  font-weight: 700;
+.cert-title {
   color: var(--text-primary);
-  margin: 0 0 4px 0;
-  line-height: 1.3;
+  font-weight: 600;
 }
 
-.license-title-provider {
-  font-size: 16px;
-  font-weight: 500;
-  color: #667eea;
-  margin: 0;
-  font-style: italic;
+.cert-provider {
+  color: var(--accent-cyan);
 }
 
-.license-about {
-  font-size: 14px;
+.cert-about {
   color: var(--text-secondary);
-  line-height: 1.5;
-  margin: 0 0 16px 0;
-}
-
-.license-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tag {
-  padding: 4px 12px;
-  background: rgba(102, 126, 234, 0.1);
-  color: #667eea;
-  border-radius: 12px;
   font-size: 12px;
-  font-weight: 600;
-  border: 1px solid rgba(102, 126, 234, 0.2);
-  transition: all 0.3s ease;
 }
 
-.tag:hover {
-  background: rgba(102, 126, 234, 0.2);
-  transform: translateY(-1px);
+.cert-tags {
+  color: var(--text-muted);
+  font-size: 11px;
 }
 
-.license-footer {
-  border-top: 1px solid var(--border-color);
-  padding-top: 16px;
+.cert-tag {
+  color: var(--accent-cyan);
+  margin-right: 4px;
 }
 
-.license-link {
+.cert-link {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.cert-link a {
+  color: var(--accent-green);
   text-decoration: none;
-  color: inherit;
 }
 
-.link-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-radius: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-}
-
-.link-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-}
-
-.link-button i {
-  font-size: 12px;
-}
-
-@media only screen and (max-width: 768px) {
-  .license-card {
-    padding: 20px;
-    margin: 12px 0;
-  }
-
-  .license-header {
-    margin-bottom: 16px;
-  }
-
-  .license-image-container {
-    width: 70px;
-    height: 70px;
-  }
-
-  .license-title-name {
-    font-size: 18px;
-  }
-
-  .license-title-provider {
-    font-size: 14px;
-  }
-
-  .license-about {
-    font-size: 13px;
-    margin-bottom: 12px;
-  }
-
-  .link-button {
-    padding: 8px 16px;
-    font-size: 13px;
-  }
+.cert-link a:hover {
+  text-decoration: underline;
+  color: var(--accent-pink);
 }
 
 @media only screen and (max-width: 480px) {
-  .license-card {
-    padding: 16px;
-    margin: 8px 0;
-  }
-
-  .license-header {
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-  }
-
-  .license-image-container {
-    width: 60px;
-    height: 60px;
-  }
-
-  .license-title-name {
-    font-size: 16px;
-  }
-
-  .license-title-provider {
-    font-size: 13px;
-  }
-
-  .license-about {
+  .cert-entry {
     font-size: 12px;
-    margin-bottom: 10px;
   }
 
-  .license-tags {
-    gap: 6px;
-  }
-
-  .tag {
+  .cert-about,
+  .cert-link {
     font-size: 11px;
-    padding: 3px 10px;
   }
 
-  .link-button {
-    padding: 6px 12px;
-    font-size: 12px;
+  .cert-tags {
+    font-size: 10px;
   }
 }

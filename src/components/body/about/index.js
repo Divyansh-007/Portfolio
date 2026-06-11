@@ -1,70 +1,40 @@
-import React, { useEffect, useState } from 'react';
-
-import image from '../../../assets/coder.png';
 import SocialContact from '../../common/social-contact';
 import './about.css';
 
 const About = () => {
-  const [text, setText] = useState('');
-  const fullText = 'Hello there 👋, I am a';
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    if (currentIndex < fullText.length) {
-      const timeout = setTimeout(() => {
-        setText(fullText.slice(0, currentIndex + 1));
-        setCurrentIndex(currentIndex + 1);
-      }, 100);
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex, fullText]);
-
   return (
     <div className="about">
-      <div className="about-background">
-        <div className="about-gradient"></div>
+      <div className="about-bio">
+        <span className="about-line">
+          <span className="about-key">name</span>
+          <span className="about-sep">: </span>
+          <span className="about-val-string">"Divyansh Jaiswal"</span>
+        </span>
+        <span className="about-line">
+          <span className="about-key">role</span>
+          <span className="about-sep">: </span>
+          <span className="about-val-string">
+            "Backend Engineer &amp; Builder"
+          </span>
+        </span>
+        <span className="about-line">
+          <span className="about-key">bio</span>
+          <span className="about-sep">: </span>
+          <span className="about-val-string">
+            "I love building solutions &amp; working with tech."
+          </span>
+        </span>
       </div>
-      <div className="about-content">
-        <div className="about-top">
-          <div className="about-info">
-            <div className="about-greeting">
-              <span className="typing-text">{text}</span>
-              <span className="cursor">|</span>
-            </div>
-            <div className="about-name-container">
-              <span className="about-name">Builder</span>
-              <div className="name-underline"></div>
-            </div>
-            <div className="about-description">
-              who love building solutions & working with tech.
-            </div>
-            <div className="about-stats">
-              <div className="stat-item">
-                <span className="stat-number">4+</span>
-                <span className="stat-label">Years Experience</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">50+</span>
-                <span className="stat-label">Projects Completed</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">10+</span>
-                <span className="stat-label">Technologies</span>
-              </div>
-            </div>
-          </div>
-          <div className="about-photo">
-            <div className="photo-container">
-              <img src={image} alt="coder" className="abt-pic" />
-              <div className="photo-overlay"></div>
-              <div className="photo-border"></div>
-            </div>
-          </div>
-        </div>
-        <div className="about-bottom">
-          <SocialContact />
-        </div>
-      </div>
+
+      <pre className="about-stats-table">
+        {`┌──────────────────┬────────┐
+│ Experience       │  4+ yr │
+│ Projects         │   50+  │
+│ Technologies     │   10+  │
+└──────────────────┴────────┘`}
+      </pre>
+
+      <SocialContact />
     </div>
   );
 };

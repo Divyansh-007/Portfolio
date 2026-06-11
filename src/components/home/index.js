@@ -1,16 +1,15 @@
 import './home.css';
 import Body from '../body/index';
 import Header from '../header/index';
+import TerminalWindow from '../terminal/TerminalWindow';
 
 const Home = () => {
   return (
     <div className="home">
-      <div>
+      <TerminalWindow>
         <Header />
-      </div>
-      <div>
         <Body />
-      </div>
+      </TerminalWindow>
     </div>
   );
 };

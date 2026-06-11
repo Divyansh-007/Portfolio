@@ -1,0 +1,50 @@
+.ascii-art {
+  padding: 20px 0 30px;
+  text-align: center;
+}
+
+.ascii-name {
+  color: var(--accent-cyan);
+  font-size: 12px;
+  line-height: 1.2;
+  margin: 0;
+  display: inline-block;
+  text-align: left;
+}
+
+.ascii-motd {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.motd-line {
+  color: var(--accent-green);
+  font-size: 14px;
+}
+
+.motd-sub {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+@media only screen and (max-width: 600px) {
+  .ascii-name {
+    font-size: 7px;
+  }
+
+  .motd-line {
+    font-size: 12px;
+  }
+
+  .motd-sub {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .ascii-name {
+    font-size: 5.5px;
+  }
+}

@@ -1,0 +1,26 @@
+.terminal-prompt {
+  padding: 12px 0 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.prompt-user {
+  color: var(--accent-green);
+}
+
+.prompt-at {
+  color: var(--text-primary);
+}
+
+.prompt-host {
+  color: var(--accent-cyan);
+}
+
+.prompt-separator {
+  color: var(--text-primary);
+}
+
+.prompt-command {
+  color: var(--accent-yellow);
+}

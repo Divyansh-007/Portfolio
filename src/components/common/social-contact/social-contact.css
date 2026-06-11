@@ -1,21 +1,16 @@
 .social-contact {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.social-icon-div {
-  padding: 6px;
-  cursor: pointer;
-  margin: 6px;
+.social-link {
+  color: var(--accent-cyan);
+  text-decoration: none;
+  font-size: 13px;
 }
 
-.social-icon {
-  height: 40px;
-}
-
-@media only screen and (max-width: 720px) {
-  .social-icon {
-    height: 32px;
-  }
+.social-link:hover {
+  color: var(--accent-pink);
+  text-decoration: underline;
 }

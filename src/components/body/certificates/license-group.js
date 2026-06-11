@@ -3,15 +3,16 @@ import './license-group.css';
 
 const LicenseGroup = ({ group }) => {
   return (
-    <div className="license-group">
-      <div className="group-header">
-        <h3 className="group-title">{group.groupTitle}</h3>
-        <p className="group-description">{group.groupDescription}</p>
+    <div className="cert-group">
+      <div className="cert-group-header">
+        {'# '}
+        {group.groupTitle}
       </div>
-      <div className="group-licenses">
-        {group.licenses.map(license => {
-          return <LicenseCard license={license} key={license.id} />;
-        })}
+      <div className="cert-group-desc">{group.groupDescription}</div>
+      <div className="cert-group-list">
+        {group.licenses.map(license => (
+          <LicenseCard license={license} key={license.id} />
+        ))}
       </div>
     </div>
   );

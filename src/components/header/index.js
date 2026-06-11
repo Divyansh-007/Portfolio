@@ -1,32 +1,54 @@
 import React, { useState } from 'react';
-
 import ThemeToggle from '../common/theme-toggle';
 import './header.css';
-import Mobile from './mobile';
-import Web from './web';
+
+const tabs = [
+  { label: 'about', href: '#about' },
+  { label: 'work', href: '#work' },
+  { label: 'skills', href: '#skills' },
+  { label: 'packages', href: '#packages' },
+  { label: 'certs', href: '#certificates' },
+  { label: 'contact', href: '#contact' },
+];
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
-    <div className="header">
-      <div className="logo">Divyansh Jaiswal</div>
-      <div className="menu">
-        <div className="web-menu">
-          <Web />
-        </div>
-        <ThemeToggle />
-        <div className="mob-menu">
-          <div
-            onClick={() => {
-              setIsOpen(!isOpen);
-            }}
-          >
-            <i className="fas fa-bars menu-icon"></i>
-          </div>
-          {isOpen && <Mobile isOpen={isOpen} setIsOpen={setIsOpen} />}
-        </div>
+    <nav className="terminal-nav">
+      <div className="nav-tabs">
+        {tabs.map(tab => (
+          <a key={tab.label} href={tab.href} className="nav-tab">
+            {tab.label}
+          </a>
+        ))}
       </div>
-    </div>
+      <div className="nav-right">
+        <ThemeToggle />
+        <button
+          className="nav-hamburger"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? '[x]' : '[=]'}
+        </button>
+      </div>
+      {mobileOpen && (
+        <div className="nav-mobile">
+          {tabs.map(tab => (
+            <a
+              key={tab.label}
+              href={tab.href}
+              className="nav-mobile-link"
+              onClick={() => setMobileOpen(false)}
+            >
+              {'> '}
+              {tab.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </nav>
   );
 };
 

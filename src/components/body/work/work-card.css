@@ -1,196 +1,87 @@
-.work-card {
-  background: var(--card-bg);
-  border-radius: 16px;
-  padding: 24px;
-  margin: 16px 0;
-  box-shadow: 0 8px 25px var(--shadow-color);
-  border: 1px solid var(--card-border);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+.work-entry {
+  margin-bottom: 16px;
+  padding: 8px 0;
 }
 
-.work-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-  border-radius: 2px;
-}
-
-.work-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
-  border-color: rgba(102, 126, 234, 0.2);
-}
-
-.work-card-header {
-  margin-bottom: 20px;
-}
-
-.work-title-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.work-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin: 0;
-  line-height: 1.3;
-}
-
-.work-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.work-badge i {
-  font-size: 10px;
-}
-
-.work-meta {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.work-dates,
-.work-location {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-secondary);
+.work-entry-header {
   font-size: 14px;
-  font-weight: 500;
+  margin-bottom: 4px;
 }
 
-.work-dates i,
-.work-location i {
-  color: #667eea;
-  font-size: 12px;
+.work-entry-prompt {
+  color: var(--accent-green);
 }
 
-.work-content {
-  margin-bottom: 20px;
+.work-entry-title {
+  color: var(--text-primary);
+  font-weight: 700;
 }
 
-.work-desc {
-  color: var(--text-secondary);
-  line-height: 1.6;
+.work-entry-active {
+  color: var(--accent-green);
+  font-weight: 700;
 }
 
-.work-desc ul {
-  margin: 0;
-  padding-left: 20px;
+.work-entry-meta {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 4px;
 }
 
-.work-desc li {
+.work-entry-divider {
+  color: var(--border-color);
+  font-size: 13px;
   margin-bottom: 8px;
+}
+
+.work-entry-desc {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+}
+
+.work-entry-desc li {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+  padding-left: 16px;
   position: relative;
+  margin-bottom: 4px;
 }
 
-.work-desc li::marker {
-  color: #667eea;
-  font-weight: bold;
+.work-entry-desc li::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  color: var(--accent-cyan);
 }
 
-.work-card-footer {
-  border-top: 1px solid var(--border-color);
-  padding-top: 16px;
-}
-
-.work-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tag {
-  padding: 4px 12px;
-  background: rgba(102, 126, 234, 0.1);
-  color: #667eea;
-  border-radius: 12px;
-  font-size: 12px;
+.work-entry-desc li b {
+  color: var(--text-primary);
   font-weight: 600;
-  border: 1px solid rgba(102, 126, 234, 0.2);
-  transition: all 0.3s ease;
 }
 
-.tag:hover {
-  background: rgba(102, 126, 234, 0.2);
-  transform: translateY(-1px);
+.work-entry-tags {
+  color: var(--text-muted);
+  font-size: 12px;
 }
 
-@media only screen and (max-width: 768px) {
-  .work-card {
-    padding: 20px;
-    margin: 12px 0;
-  }
-
-  .work-title-section {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .work-title {
-    font-size: 18px;
-  }
-
-  .work-meta {
-    gap: 15px;
-  }
-
-  .work-dates,
-  .work-location {
-    font-size: 13px;
-  }
+.work-tag {
+  color: var(--accent-cyan);
+  margin-right: 4px;
 }
 
 @media only screen and (max-width: 480px) {
-  .work-card {
-    padding: 16px;
-    margin: 8px 0;
+  .work-entry-header {
+    font-size: 13px;
   }
 
-  .work-title {
-    font-size: 16px;
-  }
-
-  .work-meta {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .work-dates,
-  .work-location {
+  .work-entry-meta,
+  .work-entry-desc li {
     font-size: 12px;
   }
 
-  .work-tags {
-    gap: 6px;
-  }
-
-  .tag {
+  .work-entry-tags {
     font-size: 11px;
-    padding: 3px 10px;
   }
 }

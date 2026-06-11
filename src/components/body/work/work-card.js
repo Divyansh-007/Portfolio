@@ -2,45 +2,33 @@ import './work-card.css';
 
 const WorkCard = ({ work, location }) => {
   return (
-    <div className="work-card">
-      <div className="work-card-header">
-        <div className="work-title-section">
-          <h3 className="work-title">{work.designation}</h3>
-          <div className="work-badge">
-            <i className="fas fa-briefcase"></i>
-            <span>Full-time</span>
-          </div>
-        </div>
-        <div className="work-meta">
-          <div className="work-dates">
-            <i className="fas fa-calendar-alt"></i>
-            <span>
-              {work.joinDate} - {work.endDate ? work.endDate : 'Present'}
-            </span>
-          </div>
-          <div className="work-location">
-            <i className="fas fa-map-marker-alt"></i>
-            <span>{location}</span>
-          </div>
-        </div>
+    <div className="work-entry">
+      <div className="work-entry-header">
+        <span className="work-entry-prompt">{'> '}</span>
+        <span className="work-entry-title">{work.designation}</span>
+        {!work.endDate && (
+          <span className="work-entry-active">{' [ACTIVE]'}</span>
+        )}
       </div>
-      <div className="work-content">
-        <div className="work-desc">
-          <ul>
-            {work.description.map((point, index) => (
-              <li key={index} dangerouslySetInnerHTML={{ __html: point }} />
-            ))}
-          </ul>
-        </div>
+      <div className="work-entry-meta">
+        {'  '}
+        {work.joinDate} → {work.endDate ? work.endDate : 'Present'} | {location}
       </div>
-      <div className="work-card-footer">
-        <div className="work-tags">
-          {work.tags.map((tag, index) => (
-            <span className="tag" key={index}>
-              {tag}
-            </span>
-          ))}
-        </div>
+      <div className="work-entry-divider">
+        {'  ─────────────────────────────'}
+      </div>
+      <ul className="work-entry-desc">
+        {work.description.map((point, index) => (
+          <li key={index} dangerouslySetInnerHTML={{ __html: point }} />
+        ))}
+      </ul>
+      <div className="work-entry-tags">
+        {'  tags: '}
+        {work.tags.map((tag, index) => (
+          <span key={index} className="work-tag">
+            [{tag}]
+          </span>
+        ))}
       </div>
     </div>
   );

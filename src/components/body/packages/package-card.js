@@ -1,10 +1,8 @@
 import './package-card.css';
 
-const PackageCard = ({ package: pkg }) => {
-  const formatDate = dateString => {
-    if (dateString === 'Unknown') return 'Unknown';
-    return new Date(dateString).toLocaleDateString();
-  };
+const PackageCard = ({ package: pkg, isLast }) => {
+  const branch = isLast ? '└──' : '├──';
+  const continuation = isLast ? '    ' : '│   ';
 
   const getNpmUrl = packageName => {
     return `https://www.npmjs.com/package/${packageName}`;
@@ -12,83 +10,64 @@ const PackageCard = ({ package: pkg }) => {
 
   const getGitHubUrl = repositoryUrl => {
     if (!repositoryUrl) return null;
-    // Convert git+https://github.com/user/repo.git to https://github.com/user/repo
     return repositoryUrl.replace(/^git\+/, '').replace(/\.git$/, '');
   };
 
   return (
-    <div className="package-card">
-      <div className="package-header">
-        <div className="package-title-section">
-          <h3 className="package-name">{pkg.name}</h3>
-          <span className="package-version">v{pkg.version}</span>
-        </div>
-        <div className="package-stats">
-          <div className="stat">
-            <i className="fas fa-download"></i>
-            <span>{pkg.downloads.toLocaleString()}</span>
-          </div>
-        </div>
+    <div className="package-tree-item">
+      <div className="package-tree-name">
+        <span className="tree-branch">{branch} </span>
+        <span className="package-name">{pkg.name}</span>
+        <span className="package-version">@{pkg.version}</span>
       </div>
-
-      <p className="package-description">{pkg.description}</p>
-
-      <div className="package-meta">
-        <div className="meta-item">
-          <i className="fas fa-balance-scale"></i>
-          <span>{pkg.license}</span>
-        </div>
-        <div className="meta-item">
-          <i className="fas fa-calendar-alt"></i>
-          <span>{formatDate(pkg.lastModified)}</span>
-        </div>
+      <div className="package-tree-detail">
+        <span className="tree-continuation">{continuation}</span>
+        <span className="package-meta">
+          downloads: {pkg.downloads.toLocaleString()} | license: {pkg.license}
+        </span>
       </div>
-
-      {pkg.keywords && pkg.keywords.length > 0 && (
-        <div className="package-keywords">
-          {pkg.keywords.slice(0, 5).map((keyword, index) => (
-            <span className="keyword" key={index}>
-              {keyword}
-            </span>
-          ))}
+      <div className="package-tree-detail">
+        <span className="tree-continuation">{continuation}</span>
+        <span className="package-desc">"{pkg.description}"</span>
+      </div>
+      <div className="package-tree-detail">
+        <span className="tree-continuation">{continuation}</span>
+        <span className="package-links">
+          {'→ '}
+          <a
+            href={getNpmUrl(pkg.name)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            npm
+          </a>
+          {pkg.homepage && (
+            <>
+              {' | '}
+              <a href={pkg.homepage} target="_blank" rel="noopener noreferrer">
+                homepage
+              </a>
+            </>
+          )}
+          {getGitHubUrl(pkg.repository) && (
+            <>
+              {' | '}
+              <a
+                href={getGitHubUrl(pkg.repository)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github
+              </a>
+            </>
+          )}
+        </span>
+      </div>
+      {!isLast && (
+        <div className="package-tree-spacer">
+          <span className="tree-continuation">{'│'}</span>
         </div>
       )}
-
-      <div className="package-links">
-        <a
-          href={getNpmUrl(pkg.name)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="package-link npm-link"
-        >
-          <i className="fab fa-npm"></i>
-          View on NPM
-        </a>
-
-        {pkg.homepage && (
-          <a
-            href={pkg.homepage}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="package-link"
-          >
-            <i className="fas fa-globe"></i>
-            Homepage
-          </a>
-        )}
-
-        {getGitHubUrl(pkg.repository) && (
-          <a
-            href={getGitHubUrl(pkg.repository)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="package-link"
-          >
-            <i className="fab fa-github"></i>
-            Repository
-          </a>
-        )}
-      </div>
     </div>
   );
 };
