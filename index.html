@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divyansh Jaiswal — Backend Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:        #0b0c10;
+    --surface:   #13141a;
+    --surface2:  #1c1d26;
+    --border:    rgba(255,255,255,0.07);
+    --border-hi: rgba(255,255,255,0.14);
+    --text:      #e8e8f0;
+    --muted:     #7a7b8e;
+    --accent:    #6C63FF;
+    --accent2:   #50fa7b;
+    --cyan:      #8be9fd;
+    --pink:      #ff79c6;
+    --mono:      'JetBrains Mono', monospace;
+    --sans:      'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(11,12,16,0.88); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 6vw;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo { font-family: var(--mono); font-size: 14px; color: var(--accent2); letter-spacing: 0.03em; }
+  .nav-logo span { color: var(--muted); }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 13px; color: var(--muted); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; padding: 0 6vw;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -200px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(108,99,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 700px; position: relative; z-index: 1; }
+  .hero-eyebrow {
+    font-family: var(--mono); font-size: 13px; color: var(--accent2);
+    margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px;
+  }
+  .hero-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--accent2); }
+  h1 { font-size: clamp(40px, 6vw, 68px); font-weight: 600; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+  h1 .name-dim { color: var(--muted); }
+  .hero-role { font-size: clamp(22px, 3.5vw, 36px); font-weight: 400; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.3; min-height: 2.2em; }
+  .cursor { display: inline-block; width: 2px; height: 1em; background: var(--accent); vertical-align: text-bottom; animation: blink 1s step-end infinite; margin-left: 2px; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  .hero-desc { font-size: 16px; color: var(--muted); line-height: 1.75; max-width: 520px; margin-bottom: 2.5rem; }
+  .hero-desc strong { color: var(--text); font-weight: 500; }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+  .btn-primary { background: var(--accent); color: #fff; border: none; }
+  .btn-primary:hover { background: #7b74ff; transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border-hi); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+  .hero-stats { display: flex; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+  .stat-num { font-size: 26px; font-weight: 600; color: var(--text); }
+  .stat-num span { color: var(--accent); }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* SECTIONS */
+  section { padding: 90px 6vw; }
+  .section-label { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .section-title { font-size: clamp(26px, 3vw, 36px); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 3rem; }
+  .section-title .dim { color: var(--muted); }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-text p { color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+  .about-text p strong { color: var(--text); font-weight: 500; }
+  .about-highlights { display: flex; flex-direction: column; gap: 12px; }
+  .highlight-item { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; display: flex; align-items: flex-start; gap: 14px; transition: border-color 0.2s; }
+  .highlight-item:hover { border-color: var(--border-hi); }
+  .hi-icon { font-size: 20px; margin-top: 1px; }
+  .hi-title { font-size: 13px; font-weight: 500; color: var(--text); }
+  .hi-desc { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* EXPERIENCE */
+  .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+  .exp-item:first-child { border-top: 1px solid var(--border); }
+  .exp-period { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-bottom: 6px; letter-spacing: 0.04em; }
+  .exp-company { font-size: 13px; font-weight: 500; color: var(--accent2); }
+  .exp-loc { font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .exp-role { font-size: 17px; font-weight: 500; margin-bottom: 10px; color: var(--text); }
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .exp-bullets li { font-size: 14px; color: var(--muted); padding-left: 16px; position: relative; line-height: 1.65; }
+  .exp-bullets li::before { content: '▹'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 3px; }
+  .exp-bullets li strong { color: var(--text); font-weight: 500; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tag { font-family: var(--mono); font-size: 11px; padding: 3px 10px; background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.2); border-radius: 4px; color: var(--accent); }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; }
+  .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
+  .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .project-card.featured { border-color: rgba(108,99,255,0.3); }
+  .proj-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; }
+  .proj-icon { font-size: 22px; }
+  .proj-links { display: flex; gap: 8px; }
+  .proj-link { font-size: 12px; color: var(--muted); padding: 4px 10px; border: 1px solid var(--border-hi); border-radius: 4px; transition: all 0.15s; }
+  .proj-link:hover { color: var(--accent); border-color: var(--accent); }
+  .proj-badge { font-size: 10px; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; display: inline-block; font-weight: 500; font-family: var(--mono); }
+  .badge-green { background: rgba(80,250,123,0.12); color: var(--accent2); }
+  .badge-cyan { background: rgba(139,233,253,0.12); color: var(--cyan); }
+  .badge-pink { background: rgba(255,121,198,0.12); color: var(--pink); }
+  .proj-name { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .proj-desc { font-size: 13px; color: var(--muted); line-height: 1.7; flex: 1; margin-bottom: 14px; }
+  .proj-stack { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; }
+  .proj-stack span { font-family: var(--mono); font-size: 10px; color: var(--muted); background: var(--surface2); padding: 2px 8px; border-radius: 3px; }
+
+  /* CODE */
+  .code-block { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; margin-top: 12px; overflow: hidden; }
+  .code-header { display: flex; align-items: center; gap: 6px; padding: 8px 14px; background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; } .dot-y { background: #ffbd2e; } .dot-g { background: #28ca42; }
+  .code-filename { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-left: 6px; }
+  pre { padding: 14px 18px; font-family: var(--mono); font-size: 12px; line-height: 1.7; overflow-x: auto; color: var(--text); }
+  .kw { color: var(--pink); } .fn { color: #6dcfff; } .str { color: var(--accent2); } .cm { color: var(--muted); font-style: italic; } .dec { color: #ffb86c; }
+
+  /* NPM badge */
+  .npm-badge { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 10px; padding: 2px 8px; background: rgba(203,56,55,0.12); border: 1px solid rgba(203,56,55,0.25); border-radius: 4px; color: #e06c6c; margin-bottom: 6px; }
+  .npm-stats { display: flex; gap: 8px; margin: 6px 0 10px; flex-wrap: wrap; }
+  .npm-stat { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 11px; padding: 3px 9px; border-radius: 4px; }
+  .npm-stat-ver { background: rgba(80,250,123,0.1); border: 1px solid rgba(80,250,123,0.2); color: var(--accent2); }
+  .npm-stat-dl { background: rgba(139,233,253,0.1); border: 1px solid rgba(139,233,253,0.2); color: var(--cyan); }
+  .npm-stat-label { opacity: 0.65; font-size: 10px; margin-right: 2px; }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .skill-group { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+  .skill-group-title { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
+  .skill-list { display: flex; flex-direction: column; gap: 9px; }
+  .skill-item { display: flex; align-items: center; gap: 10px; }
+  .skill-name { font-size: 13px; color: var(--text); flex: 1; }
+  .skill-bar { height: 3px; flex: 1; background: var(--surface2); border-radius: 2px; overflow: hidden; max-width: 80px; }
+  .skill-fill { height: 100%; border-radius: 2px; background: var(--accent); }
+
+  /* AI CALLOUT */
+  .ai-callout { background: linear-gradient(135deg, rgba(108,99,255,0.08) 0%, rgba(80,250,123,0.06) 100%); border: 1px solid rgba(108,99,255,0.25); border-radius: 12px; padding: 2rem 2.5rem; display: flex; align-items: center; gap: 2rem; margin-bottom: 2.5rem; }
+  .ai-callout-icon { font-size: 36px; flex-shrink: 0; }
+  .ai-callout-title { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+  .ai-callout-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+  .ai-callout-desc strong { color: var(--accent2); font-weight: 500; }
+
+  /* PUBLICATION */
+  .pub-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem; display: flex; gap: 1.5rem; align-items: flex-start; transition: border-color 0.2s; }
+  .pub-card:hover { border-color: var(--border-hi); }
+  .pub-badge { background: rgba(255,121,198,0.12); color: var(--pink); border: 1px solid rgba(255,121,198,0.25); border-radius: 6px; padding: 6px 14px; font-size: 11px; font-weight: 500; font-family: var(--mono); white-space: nowrap; }
+  .pub-title { font-size: 16px; font-weight: 500; margin-bottom: 8px; line-height: 1.4; }
+  .pub-authors { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  .pub-authors strong { color: var(--text); }
+  .pub-link { font-size: 12px; color: var(--accent); }
+
+  /* CONTACT */
+  .contact-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+  .contact-inner .section-label { display: block; }
+  .contact-inner .section-title { margin-bottom: 1rem; }
+  .contact-desc { color: var(--muted); margin-bottom: 2rem; }
+  .contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 1rem; }
+  .contact-link { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border: 1px solid var(--border-hi); border-radius: 6px; font-size: 13px; color: var(--muted); transition: all 0.2s; }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+  .contact-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  footer { text-align: center; padding: 2rem 6vw; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 700px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .ai-callout { flex-direction: column; gap: 1rem; }
+    .pub-card { flex-direction: column; }
+    nav .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><span>~/</span>divyansh</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Hello, world</div>
+    <h1>Divyansh<br><span class="name-dim">Jaiswal</span></h1>
+    <div class="hero-role" id="typewriter">Backend Engineer<span class="cursor"></span></div>
+    <p class="hero-desc">
+      Building <strong>scalable microservices and RESTful APIs</strong> with Node.js, NestJS, and MongoDB.
+      3.5+ years of backend engineering across fintech, SaaS, and healthcare — 
+      with a growing edge in <strong>AI-assisted development using Claude Code</strong>.
+    </p>
+    <div class="btn-row">
+      <a href="mailto:divyanshjais8@gmail.com" class="btn btn-primary">Get in touch</a>
+      <a href="https://linkedin.com/in/divyanshjaiswal" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
+      <a href="https://github.com/Divyansh-007" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">3.5<span>+</span></div>
+        <div class="stat-label">Years backend</div>
+      </div>
+      <div>
+        <div class="stat-num">73<span>%</span></div>
+        <div class="stat-label">API latency cut</div>
+      </div>
+      <div>
+        <div class="stat-num">5</div>
+        <div class="stat-label">open-source projects</div>
+      </div>
+      <div>
+        <div class="stat-num">1</div>
+        <div class="stat-label">IEEE publication</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About me</div>
+  <h2 class="section-title">Backend engineer<span class="dim">, open-source builder</span></h2>
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <p>I'm a Backend SDE-II based in <strong>New Delhi</strong>, currently at Mckinley Rice (Redrob) — leading microservices architecture and building production billing infrastructure from scratch.</p>
+      <p>My core stack is <strong>Node.js, NestJS, and MongoDB</strong>. I've shipped systems across fintech (Mastercard API integration), SaaS (Stripe subscription billing, enrichment pipelines), and healthcare (Java at RxLogix).</p>
+      <p>Outside of work, I publish <strong>open-source npm packages</strong>, a Claude Code plugin, and an MCP AI agent — tools that other developers actually use in their workflows.</p>
+      <p>I'm targeting a <strong>Senior SDE or Backend Tech Lead</strong> role, remote or Delhi-NCR.</p>
+      <p style="font-size: 13px; color: var(--muted); margin-top: 1.5rem;">B.S. EEE · Delhi Technological University · GPA 8.03 · 2020</p>
+    </div>
+    <div class="about-highlights fade-up">
+      <div class="highlight-item">
+        <div class="hi-icon">💳</div>
+        <div>
+          <div class="hi-title">Stripe billing system from scratch</div>
+          <div class="hi-desc">Multi-plan per-seat subscriptions, idempotent webhooks, referral codes, crons — zero duplicate charges</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <div class="hi-icon">⚡</div>
+        <div>
+          <div class="hi-title">73% API latency reduction</div>
+          <div class="hi-desc">Prisma → Mongoose ORM swap on read-heavy path: 2700ms → 1971ms, no infra changes</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <div class="hi-icon">🔄</div>
+        <div>
+          <div class="hi-title">Monolith → microservices lead</div>
+          <div class="hi-desc">Architected and executed the full backend migration at Redrob with shared submodule libraries</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <div class="hi-icon">📦</div>
+        <div>
+          <div class="hi-title">Open-source contributor</div>
+          <div class="hi-desc">5 shipped projects: a Swiggy MCP AI agent, a Claude Code plugin + 3 npm utilities (encryptor, rate-limiter, shortify)</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <div class="hi-icon">📄</div>
+        <div>
+          <div class="hi-title">IEEE-published researcher</div>
+          <div class="hi-desc">ML-based PV Power Forecasting · ieeexplore.ieee.org · Aug 2020</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section-label">Work history</div>
+  <h2 class="section-title">Experience</h2>
+
+  <!-- Mckinley Rice SDE II -->
+  <div class="exp-item fade-up">
+    <div>
+      <div class="exp-period">Jan 2025 — Sept 2026</div>
+      <div class="exp-company">Mckinley Rice (Redrob)</div>
+      <div class="exp-loc">Noida · Full-time</div>
+    </div>
+    <div>
+      <div class="exp-role">Software Developer II</div>
+      <ul class="exp-bullets">
+        <li>Built a <strong>Stripe billing system from scratch</strong> — multi-plan per-seat subscriptions, idempotent webhooks, referral/discount codes, crons, and OTP admin APIs. Zero duplicate charges in production.</li>
+        <li>Redesigned the contact enrichment pipeline as a <strong>5-stage async system</strong> (Redis MinPQ → GCP Cloud Tasks → BullMQ) with atomic credit settlement, eliminating all reliability gaps from the original design.</li>
+        <li>Led the <strong>Developer Hub platform</strong> — exposed internal backend as external-facing, well-documented APIs post microservices migration.</li>
+        <li>Architected <strong>shared libraries via GitHub submodules</strong> (DB access, logging, utils) used across all microservices, eliminating duplicated logic and cross-service bugs.</li>
+        <li>Led the <strong>monolith → microservices migration</strong> and mentored junior developers on NestJS and MongoDB best practices.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="tag">NestJS</span><span class="tag">Node.js</span><span class="tag">TypeScript</span>
+        <span class="tag">MongoDB</span><span class="tag">Stripe</span><span class="tag">Redis</span>
+        <span class="tag">BullMQ</span><span class="tag">GCP Cloud Tasks</span><span class="tag">Elasticsearch</span><span class="tag">AWS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mckinley Rice Node Dev I -->
+  <div class="exp-item fade-up">
+    <div>
+      <div class="exp-period">Jan 2024 — Jan 2025</div>
+      <div class="exp-company">Mckinley Rice (Redrob)</div>
+      <div class="exp-loc">Noida · Full-time</div>
+    </div>
+    <div>
+      <div class="exp-role">Node.js Developer I</div>
+      <ul class="exp-bullets">
+        <li>Identified <strong>Prisma ORM overhead</strong> as the bottleneck on a read-heavy API and introduced <strong>Mongoose</strong> for the read path — cutting response time from <strong>2700ms → 1971ms (73% faster)</strong>, no infra changes.</li>
+        <li>Built a <strong>chat module</strong> (NestJS, MongoDB) supporting text, documents, and images with attachments on <strong>AWS S3</strong>.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">MongoDB</span>
+        <span class="tag">Mongoose</span><span class="tag">Prisma</span><span class="tag">AWS S3</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Getout System -->
+  <div class="exp-item fade-up">
+    <div>
+      <div class="exp-period">Jul 2022 — Oct 2023</div>
+      <div class="exp-company">Getout System</div>
+      <div class="exp-loc">Gurugram · Full-time</div>
+    </div>
+    <div>
+      <div class="exp-role">Software Development Engineer II</div>
+      <ul class="exp-bullets">
+        <li>Integrated <strong>Mastercard's corporate payment API</strong>, enabling SDK development for payment workflows.</li>
+        <li>Improved <strong>service response time by 30%</strong> by optimising API architecture and database queries.</li>
+        <li>Enhanced <strong>codebase efficiency by 25%</strong> through modular design, clean coding practices, and thorough testing.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MySQL</span><span class="tag">Mastercard API</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- RxLogix -->
+  <div class="exp-item fade-up">
+    <div>
+      <div class="exp-period">Jun 2021 — Jul 2022</div>
+      <div class="exp-company">RxLogix</div>
+      <div class="exp-loc">Noida · Full-time</div>
+    </div>
+    <div>
+      <div class="exp-role">Associate Software Engineer I</div>
+      <ul class="exp-bullets">
+        <li>Improved product stability as a <strong>Java developer</strong> by resolving 50+ critical bugs.</li>
+        <li>Led a feature release integrating <strong>Docker installation</strong>, reducing environment setup errors by 40%.</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="tag">Java</span><span class="tag">Docker</span><span class="tag">MySQL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">What I've built</div>
+  <h2 class="section-title">Projects <span class="dim">&amp; open source</span></h2>
+
+  <div class="ai-callout fade-up">
+    <div class="ai-callout-icon">🤖</div>
+    <div>
+      <div class="ai-callout-title">AI-native developer</div>
+      <div class="ai-callout-desc">
+        I use <strong>Claude Code</strong> as a daily development tool and have authored a <strong>Claude Code plugin for NestJS backends</strong> — packaging reusable rules, skills, and slash commands to accelerate backend workflows with AI assistance.
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- swiggy-smart-order-agent -->
+    <div class="project-card featured fade-up">
+      <div class="proj-header">
+        <div class="proj-icon">🍔</div>
+        <div class="proj-links">
+          <a href="https://github.com/Divyansh-007/swiggy-smart-order-agent" target="_blank" class="proj-link">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="proj-badge badge-green">MCP Server · AI Agent</div>
+      <div class="proj-name">swiggy-smart-order-agent</div>
+      <p class="proj-desc">
+        An intelligent <strong>MCP (Model Context Protocol) server</strong> that analyzes real Swiggy order history to deliver personalized restaurant recommendations — a curated <strong>reorder list</strong> (top places with previous items ready to add to cart) and a <strong>discover list</strong> of new spots matching past dish preferences. Ranks by frequency, recency, pricing, and time-of-day, and adapts via accept/skip feedback. Authenticates against Swiggy's real API with <strong>OAuth 2.1 + PKCE</strong>; stops at cart confirmation and never places actual orders.
+      </p>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+          <span class="code-filename">mcp-tool.ts</span>
+        </div>
+        <pre><span class="cm">// Ranks your order history into two lists</span>
+<span class="kw">const</span> { reorder, discover } = <span class="kw">await</span> <span class="fn">recommend</span>({
+  history,
+  <span class="fn">rankBy</span>: [<span class="str">"frequency"</span>, <span class="str">"recency"</span>, <span class="str">"timeOfDay"</span>],
+});
+<span class="cm">// "Surprise me" → adds a pick to your live cart</span>
+<span class="kw">await</span> <span class="fn">addToCart</span>(discover[<span class="dec">0</span>]); <span class="cm">// stops before checkout</span></pre>
+      </div>
+      <div class="proj-stack" style="margin-top: 12px;">
+        <span>TypeScript</span><span>Node.js</span><span>MCP</span><span>OAuth 2.1 / PKCE</span><span>MongoDB</span><span>Jest</span>
+      </div>
+    </div>
+
+    <!-- nestjs-backend-toolkit -->
+    <div class="project-card featured fade-up">
+      <div class="proj-header">
+        <div class="proj-icon">🛠️</div>
+        <div class="proj-links">
+          <a href="https://github.com/Divyansh-007/claude-plugins/tree/main/nestjs-toolkit" target="_blank" class="proj-link">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="proj-badge badge-green">Claude Code Plugin</div>
+      <div class="proj-name">nestjs-backend-toolkit</div>
+      <p class="proj-desc">
+        Open-source Claude Code plugin for NestJS backends — packages reusable rules, skills, and slash commands to accelerate backend development workflows with AI assistance. Integrates with MCP servers enabling Claude Code agents to interact with GitHub and MongoDB during development tasks.
+      </p>
+      <div class="code-block">
+        <div class="code-header">
+          <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+          <span class="code-filename">CLAUDE.md (plugin rule)</span>
+        </div>
+        <pre><span class="cm"># nestjs-backend-toolkit</span>
+<span class="cm"># Rule: always use Guards for auth</span>
+
+<span class="dec">@Injectable()</span>
+<span class="kw">export class</span> <span class="fn">AuthGuard</span> <span class="kw">implements</span> <span class="fn">CanActivate</span> {
+  <span class="fn">canActivate</span>(ctx: ExecutionContext) {
+    <span class="kw">return</span> <span class="fn">validateToken</span>(ctx);
+  }
+}</pre>
+      </div>
+      <div class="proj-stack" style="margin-top: 12px;">
+        <span>Claude Code</span><span>NestJS</span><span>TypeScript</span><span>MCP</span>
+      </div>
+    </div>
+
+    <!-- encryptor npm -->
+    <div class="project-card fade-up">
+      <div class="proj-header">
+        <div class="proj-icon">🔐</div>
+        <div class="proj-links">
+          <a href="https://www.npmjs.com/package/@developers-joyride/encryptor" target="_blank" class="proj-link">npm ↗</a>
+        </div>
+      </div>
+      <div class="npm-badge">
+        <svg width="12" height="12" viewBox="0 0 18 7" fill="currentColor"><path d="M0 0h18v6H9V1H7v5H0V0zm1 5h2V1H1v4zm3-4v4h2V1H4zm8 0v4h1V1h-1zm2 0v4h2V1h-2z"/></svg>
+        npm
+      </div>
+      <div class="npm-stats">
+        <span class="npm-stat npm-stat-ver" id="ver-encryptor"><span class="npm-stat-label">v</span>—</span>
+        <span class="npm-stat npm-stat-dl" id="dl-encryptor"><span class="npm-stat-label">↓</span>—</span>
+      </div>
+      <div class="proj-name">@developers-joyride/encryptor</div>
+      <p class="proj-desc">
+        Hybrid <strong>RSA + AES-256-GCM</strong> encryption middleware for Express.js and NestJS. Handles end-to-end API request/response encryption transparently — with built-in <strong>replay attack protection</strong> via Memory or Redis store. Zero external dependencies; uses Node.js built-in crypto.
+      </p>
+      <div class="proj-stack">
+        <span>TypeScript</span><span>Node.js crypto</span><span>Express</span><span>NestJS</span><span>Redis</span>
+      </div>
+    </div>
+
+    <!-- rate-limiter npm -->
+    <div class="project-card fade-up">
+      <div class="proj-header">
+        <div class="proj-icon">🚦</div>
+        <div class="proj-links">
+          <a href="https://www.npmjs.com/package/@developers-joyride/rate-limiter" target="_blank" class="proj-link">npm ↗</a>
+        </div>
+      </div>
+      <div class="npm-badge">
+        <svg width="12" height="12" viewBox="0 0 18 7" fill="currentColor"><path d="M0 0h18v6H9V1H7v5H0V0zm1 5h2V1H1v4zm3-4v4h2V1H4zm8 0v4h1V1h-1zm2 0v4h2V1h-2z"/></svg>
+        npm
+      </div>
+      <div class="npm-stats">
+        <span class="npm-stat npm-stat-ver" id="ver-ratelimiter"><span class="npm-stat-label">v</span>—</span>
+        <span class="npm-stat npm-stat-dl" id="dl-ratelimiter"><span class="npm-stat-label">↓</span>—</span>
+      </div>
+      <div class="proj-name">@developers-joyride/rate-limiter</div>
+      <p class="proj-desc">
+        Flexible rate limiting library for <strong>Express and NestJS</strong> with pluggable <strong>MongoDB and Redis</strong> backends. Supports guards, interceptors, custom key generators, rate limit headers, and per-route configuration — with TTL-indexed automatic cleanup.
+      </p>
+      <div class="proj-stack">
+        <span>TypeScript</span><span>Express</span><span>NestJS</span><span>MongoDB</span><span>Redis</span>
+      </div>
+    </div>
+
+    <!-- shortify npm -->
+    <div class="project-card fade-up">
+      <div class="proj-header">
+        <div class="proj-icon">🔗</div>
+        <div class="proj-links">
+          <a href="https://www.npmjs.com/package/@developers-joyride/shortify" target="_blank" class="proj-link">npm ↗</a>
+        </div>
+      </div>
+      <div class="npm-badge">
+        <svg width="12" height="12" viewBox="0 0 18 7" fill="currentColor"><path d="M0 0h18v6H9V1H7v5H0V0zm1 5h2V1H1v4zm3-4v4h2V1H4zm8 0v4h1V1h-1zm2 0v4h2V1h-2z"/></svg>
+        npm
+      </div>
+      <div class="npm-stats">
+        <span class="npm-stat npm-stat-ver" id="ver-shortify"><span class="npm-stat-label">v</span>—</span>
+        <span class="npm-stat npm-stat-dl" id="dl-shortify"><span class="npm-stat-label">↓</span>—</span>
+      </div>
+      <div class="proj-name">@developers-joyride/shortify</div>
+      <p class="proj-desc">
+        High-performance URL shortener library with <strong>multi-database support</strong> — MongoDB, PostgreSQL, MySQL, and SQLite via a unified API. Features click analytics, URL expiration, custom short IDs, and connection retry with exponential backoff.
+      </p>
+      <div class="proj-stack">
+        <span>TypeScript</span><span>MongoDB</span><span>PostgreSQL</span><span>MySQL</span><span>SQLite</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section-label">Technical skills</div>
+  <h2 class="section-title">Stack</h2>
+  <div class="skills-grid">
+    <div class="skill-group fade-up">
+      <div class="skill-group-title">Backend</div>
+      <div class="skill-list">
+        <div class="skill-item"><span class="skill-name">Node.js / NestJS</span><div class="skill-bar"><div class="skill-fill" style="width:73%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">TypeScript</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Express.js</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Java</span><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
+      </div>
+    </div>
+    <div class="skill-group fade-up">
+      <div class="skill-group-title">Databases</div>
+      <div class="skill-list">
+        <div class="skill-item"><span class="skill-name">MongoDB</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">MySQL</span><div class="skill-bar"><div class="skill-fill" style="width:68%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Redis</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+        <!-- <div class="skill-item"><span class="skill-name">Elasticsearch</span><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div> -->
+      </div>
+    </div>
+    <div class="skill-group fade-up">
+      <div class="skill-group-title">Cloud & DevOps</div>
+      <div class="skill-list">
+        <div class="skill-item"><span class="skill-name">AWS (S3)</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">GCP Cloud Tasks</span><div class="skill-bar"><div class="skill-fill" style="width:60%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">GitHub / Git</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+      </div>
+    </div>
+    <div class="skill-group fade-up" style="border-color: rgba(108,99,255,0.3);">
+      <div class="skill-group-title" style="color: var(--accent2);">AI Tooling ✦</div>
+      <div class="skill-list">
+        <div class="skill-item"><span class="skill-name">Claude Code</span><div class="skill-bar"><div class="skill-fill" style="width:68%; background: var(--accent2);"></div></div></div>
+        <div class="skill-item"><span class="skill-name">MCP (protocol)</span><div class="skill-bar"><div class="skill-fill" style="width:55%; background: var(--accent2);"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATION -->
+<section id="publication">
+  <div class="section-label">Research</div>
+  <h2 class="section-title">IEEE Publication</h2>
+  <div class="pub-card fade-up">
+    <div><div class="pub-badge">IEEE · Aug 2020</div></div>
+    <div>
+      <div class="pub-title">A Machine Learning-Based Approach for PV Power Forecasting</div>
+      <div class="pub-authors">Divyaang Agarwal, Vishrut Gupta, <strong>Divyansh Jaiswal</strong>, A. K. Mandpura</div>
+      <a href="https://ieeexplore.ieee.org/document/9154131" target="_blank" class="pub-link">ieeexplore.ieee.org/document/9154131 ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <span class="section-label">Get in touch</span>
+    <h2 class="section-title">Let's talk</h2>
+    <p class="contact-desc">
+      Open to Senior SDE and Backend Tech Lead roles — remote, hybrid, or Delhi-NCR.
+    </p>
+    <a href="mailto:divyanshjais8@gmail.com" class="btn btn-primary" style="font-size:15px; padding: 12px 28px;">
+      divyanshjais8@gmail.com
+    </a>
+    <div class="contact-links">
+      <a href="https://linkedin.com/in/divyanshjaiswal" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/Divyansh-007" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+        GitHub
+      </a>
+      <a href="https://divyansh-jaiswal.netlify.app" target="_blank" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        Portfolio
+      </a>
+      <a href="tel:+919310050667" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +91 93100 50667
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Divyansh Jaiswal · New Delhi · </span>
+  <span style="color: var(--accent2);">divyansh-jaiswal.netlify.app</span>
+</footer>
+
+<script>
+  const roles = [
+    'Backend Engineer',
+    'Microservices Architect',
+    'API Developer',
+    'Open-source Builder',
+    'AI-native Developer',
+  ];
+  let ri = 0, ci = 0, deleting = false;
+  const el = document.getElementById('typewriter');
+  function type() {
+    const role = roles[ri];
+    const cur = deleting ? role.slice(0, ci--) : role.slice(0, ci++);
+    el.innerHTML = cur + '<span class="cursor"></span>';
+    if (!deleting && ci > role.length) { setTimeout(() => { deleting = true; type(); }, 1800); return; }
+    if (deleting && ci < 0) { deleting = false; ri = (ri + 1) % roles.length; ci = 0; }
+    setTimeout(type, deleting ? 45 : 80);
+  }
+  type();
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // Live npm stats
+  function fmtDownloads(n) {
+    if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k/mo';
+    return n + '/mo';
+  }
+
+  async function loadNpmStats(pkg, verId, dlId) {
+    try {
+      const encoded = encodeURIComponent(pkg);
+      const [meta, dlData] = await Promise.all([
+        fetch(`https://registry.npmjs.org/${encoded}/latest`).then(r => r.json()),
+        fetch(`https://api.npmjs.org/downloads/point/last-month/${encoded}`).then(r => r.json())
+      ]);
+      const vEl = document.getElementById(verId);
+      const dEl = document.getElementById(dlId);
+      if (vEl && meta.version) {
+        vEl.innerHTML = `<span class="npm-stat-label">v</span>${meta.version}`;
+      }
+      if (dEl && dlData.downloads) {
+        dEl.innerHTML = `<span class="npm-stat-label">↓</span>${fmtDownloads(dlData.downloads)}`;
+      }
+    } catch(e) { /* silently fail, dashes remain */ }
+  }
+
+  loadNpmStats('@developers-joyride/encryptor',   'ver-encryptor',   'dl-encryptor');
+  loadNpmStats('@developers-joyride/rate-limiter', 'ver-ratelimiter', 'dl-ratelimiter');
+  loadNpmStats('@developers-joyride/shortify',     'ver-shortify',    'dl-shortify');
+</script>
+</body>
+</html>
